@@ -8,5 +8,6 @@ namespace Biblioteca
 {
     public sealed class Doctor : Persona
     {
+
     }
 }
