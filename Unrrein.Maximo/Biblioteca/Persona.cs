@@ -5,7 +5,12 @@ namespace Biblioteca
     public abstract class Persona
     {
 
-        public Persona(string nombre, string apellido, int dni, string genero) 
+        private string nombre;
+        private string apellido;
+        private int dni;
+        private string genero;
+
+        protected Persona(string nombre, string apellido, int dni, string genero) 
         {
             this.Nombre = nombre;
             this.Apellido = apellido;
@@ -18,34 +23,32 @@ namespace Biblioteca
         //Atributos
         public string Nombre 
         {
-            get => this.Nombre;
+            get => this.nombre;
             set 
             {
-                if (this.ValidacionNombreApellido(value))
-                {
-                    this.Nombre = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Nombre no valido");
-                }
+                this.nombre = value;
+                
             } 
         }
-        public abstract string Apellido { get; set; }
-        public abstract int DNI { get; set; }
-        public abstract string Genero { get; set;}
+
+        //Propiedades
+        public  string Apellido { get => this.apellido; set => this.apellido = value; }
+        public  int DNI { get => this.dni; set => this.dni = value; }
+        public  string Genero { get => this.genero; set => this.genero = value; }
 
 
         //Metodos
         public abstract string Mostrar();
+
+        /*
         private bool ValidacionNombreApellido(string valor)
         {
-            if (!string.IsNullOrEmpty(valor) && !(Regex.IsMatch(valor, @"\d")))
+            if (!string.IsNullOrEmpty(valor) && Regex.IsMatch(valor, @"\d"))
             {
                 return true;
             }
             return false;
-        }
+        }*/
 
 
     }

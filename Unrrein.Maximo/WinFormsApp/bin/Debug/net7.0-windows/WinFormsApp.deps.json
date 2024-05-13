@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "WinFormsApp/1.0.0": {
+        "dependencies": {
+          "Biblioteca": "1.0.0"
+        },
         "runtime": {
           "WinFormsApp.dll": {}
+        }
+      },
+      "Biblioteca/1.0.0": {
+        "runtime": {
+          "Biblioteca.dll": {}
         }
       }
     }
   },
   "libraries": {
     "WinFormsApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblioteca/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

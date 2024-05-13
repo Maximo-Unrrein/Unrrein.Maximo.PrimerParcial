@@ -39,6 +39,8 @@
             button2 = new Button();
             label4 = new Label();
             label5 = new Label();
+            listBox1 = new ListBox();
+            label6 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -54,32 +56,32 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(129, 118);
+            label1.Location = new Point(129, 98);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(39, 15);
             label1.TabIndex = 1;
-            label1.Text = "Lugar";
+            label1.Text = "Hora";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(129, 200);
+            label2.Location = new Point(129, 180);
             label2.Name = "label2";
-            label2.Size = new Size(39, 15);
+            label2.Size = new Size(71, 15);
             label2.TabIndex = 2;
-            label2.Text = "Hora";
+            label2.Text = "Consulta";
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(376, 118);
+            monthCalendar1.Location = new Point(376, 98);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(129, 136);
+            comboBox1.Location = new Point(129, 116);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 4;
@@ -87,7 +89,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(129, 218);
+            comboBox2.Location = new Point(129, 198);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
             comboBox2.TabIndex = 5;
@@ -95,7 +97,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(129, 292);
+            comboBox3.Location = new Point(129, 272);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(121, 23);
             comboBox3.TabIndex = 7;
@@ -104,15 +106,15 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(129, 274);
+            label3.Location = new Point(129, 254);
             label3.Name = "label3";
-            label3.Size = new Size(71, 15);
+            label3.Size = new Size(55, 15);
             label3.TabIndex = 6;
-            label3.Text = "Consulta";
+            label3.Text = "Doctor";
             // 
             // button2
             // 
-            button2.Location = new Point(376, 292);
+            button2.Location = new Point(376, 272);
             button2.Name = "button2";
             button2.Size = new Size(248, 23);
             button2.TabIndex = 8;
@@ -138,12 +140,33 @@
             label5.TabIndex = 10;
             label5.Text = "-------";
             // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new Point(129, 351);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(495, 64);
+            listBox1.TabIndex = 11;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(129, 333);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 15);
+            label6.TabIndex = 12;
+            label6.Text = "Datos del Turno";
+            // 
             // FrmPaciente
             // 
             AutoScaleDimensions = new SizeF(9F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(761, 461);
+            Controls.Add(label6);
+            Controls.Add(listBox1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(button2);
@@ -176,5 +199,7 @@
         private Button button2;
         private Label label4;
         private Label label5;
+        private ListBox listBox1;
+        private Label label6;
     }
 }

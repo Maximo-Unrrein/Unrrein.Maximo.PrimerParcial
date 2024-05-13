@@ -18,3 +18,7 @@ W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.FrmCreation.resources
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.FrmDoctor.resources
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.FrmPaciente.resources
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\bin\Debug\net7.0-windows\Biblioteca.dll
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\bin\Debug\net7.0-windows\Biblioteca.pdb
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.csproj.AssemblyReference.cache
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.csproj.CopyComplete

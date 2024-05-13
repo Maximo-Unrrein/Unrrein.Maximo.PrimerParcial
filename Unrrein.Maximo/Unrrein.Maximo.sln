@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp", "WinFormsApp\WinFormsApp.csproj", "{278F5D3F-B726-412E-913F-E4BDE9349572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp", "WinFormsApp\WinFormsApp.csproj", "{278F5D3F-B726-412E-913F-E4BDE9349572}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{710E232A-E9B5-49FA-A9CC-74134336D097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{710E232A-E9B5-49FA-A9CC-74134336D097}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTesteo", "ConsoleTesteo\ConsoleTesteo.csproj", "{78834197-5F81-4192-87D6-B8778DABE2CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{710E232A-E9B5-49FA-A9CC-74134336D097}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{710E232A-E9B5-49FA-A9CC-74134336D097}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{710E232A-E9B5-49FA-A9CC-74134336D097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78834197-5F81-4192-87D6-B8778DABE2CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78834197-5F81-4192-87D6-B8778DABE2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78834197-5F81-4192-87D6-B8778DABE2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78834197-5F81-4192-87D6-B8778DABE2CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

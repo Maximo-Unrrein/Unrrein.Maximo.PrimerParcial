@@ -89,7 +89,7 @@
             listBox1.ItemHeight = 15;
             listBox1.Location = new Point(435, 72);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(387, 319);
+            listBox1.Size = new Size(352, 319);
             listBox1.TabIndex = 5;
             // 
             // FrmDoctor
