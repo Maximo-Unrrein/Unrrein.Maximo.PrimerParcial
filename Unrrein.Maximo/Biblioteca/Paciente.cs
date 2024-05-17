@@ -16,7 +16,7 @@ namespace Biblioteca
         protected Membresia membresia;
         
         //Constructor
-        public Paciente(string nombre, string apellido, int dni, string genero, Membresia membresia, Turno turno, string enfermedad) : base(nombre, apellido, dni, genero)
+        public Paciente(string nombre, string apellido, int dni, char genero, Membresia membresia, Turno turno, string enfermedad) : base(nombre, apellido, dni, genero)
         {
             this.GETAndSETMembresia = membresia;
             this.Turno = turno;
@@ -33,7 +33,16 @@ namespace Biblioteca
         //MEtodos
         public override string Mostrar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Nombre: {base.Nombre}");
+            sb.AppendLine($"Apellido: {base.Apellido}");
+            sb.AppendLine($"DNI: {base.DNI}");
+            sb.AppendLine($"Genero: {base.Genero}");
+            sb.AppendLine($"Membresia: {this.GETAndSETMembresia}");
+            sb.AppendLine($"Turno: {this.Turno}");
+            sb.AppendLine($"Enfermedad:{this.Enfermedad}");
+
+            return sb.ToString();
         }
     }
 }

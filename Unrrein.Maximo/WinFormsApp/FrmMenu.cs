@@ -13,5 +13,12 @@ namespace WinFormsApp
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmCreation frmCreation = new FrmCreation();
+            frmCreation.ShowDialog();
+        }
     }
 }

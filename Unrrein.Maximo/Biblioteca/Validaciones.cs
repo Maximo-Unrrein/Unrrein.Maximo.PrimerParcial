@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace Biblioteca
+{
+    public static class Validaciones
+    {
+        //Validaciones para clase PERSONA
+        public static bool NombreYApellido(string nombre)
+        {
+            string pattern = @"^[A-Za-z ]+$";
+            return Regex.IsMatch(nombre, pattern);
+        }
+
+        public static bool DNI(int dni)
+        {
+            // Convertir el DNI a string para usar regex
+            string dniStr = dni.ToString();
+            // Regex para un DNI válido (8 dígitos)
+            string pattern = @"^\d{8}$";
+            return Regex.IsMatch(dniStr, pattern);
+        }
+
+    }
+}

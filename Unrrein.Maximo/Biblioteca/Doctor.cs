@@ -16,7 +16,7 @@ namespace Biblioteca
         private string especialidad;
 
         //Constructor
-        public Doctor(string nombre, string apellido, int dni, string genero, List<Paciente> listaPacientes, int[] horarioAtencion, List<int> dias, string turno, string especialidad) : base(nombre, apellido, dni, genero)
+        public Doctor(string nombre, string apellido, int dni, char genero, List<Paciente> listaPacientes, int[] horarioAtencion, List<int> dias, string turno, string especialidad) : base(nombre, apellido, dni, genero)
         {
             this.listaPacientes = listaPacientes;
             this.turno = turno;
@@ -37,7 +37,55 @@ namespace Biblioteca
         //MEtodos
         public override string Mostrar()
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Nombre: {base.Nombre}");
+            sb.AppendLine($"Apellido: {base.Apellido}");
+            sb.AppendLine($"DNI: {base.DNI}");
+            sb.AppendLine($"Genero: {base.Genero}");
+            sb.AppendLine($"Especialidad: {this.Especialidad}");
+            sb.AppendLine($"Turno: {this.Turno}");
+            sb.AppendLine($"Horarios de Atención: {this.Turno}");
+            sb.AppendLine($"Lista de pacientes:\n{this.ListaPacientes}");
+            
+            return  sb.ToString();
+        }
+
+
+
+        public static bool operator ==(Doctor doctor, Paciente paciente)
+        {
+            foreach(Persona persona in doctor.ListaPacientes)
+            {
+                if (persona == paciente) 
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static bool operator !=(Doctor doctor, Paciente paciente)
+        {
+            return !(doctor == paciente);
+        }
+
+        public static bool operator +(Doctor doctor, Paciente paciente)
+        {
+            if(doctor != paciente)
+            {
+                doctor.listaPacientes.Add(paciente);
+                return true;
+            }
+            return false;
+        }
+        public static bool operator -(Doctor doctor, Paciente paciente)
+        {
+            if (doctor == paciente)
+            {
+                doctor.listaPacientes.Remove(paciente);
+                return false;
+            }
+            return true;
         }
     }
 }

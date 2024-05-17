@@ -23,5 +23,17 @@ namespace WinFormsApp
             FrmMenu login = new FrmMenu();
             login.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmPaciente frmPaciente = new FrmPaciente();
+            frmPaciente.ShowDialog();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
     }
 }

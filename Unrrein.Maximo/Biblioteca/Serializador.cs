@@ -7,18 +7,42 @@ using System.Threading.Tasks;
 
 namespace Biblioteca
 {
-    public class Serializador
+    public static class JsonFileHandler
     {
         public static void Serialize(object obj, string filePath)
         {
-            string json = JsonSerializer.Serialize(obj);
-            File.WriteAllText(filePath, json);
+            try
+            {
+                string json = JsonSerializer.Serialize(obj);
+                File.WriteAllText(filePath, json);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+            }
+            finally
+            {
+                
+            }
         }
 
-        public static object Deserialize(string filePath, System.Type objectType)
+        public static object Deserialize(string filePath, Type objectType)
         {
-            string json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize(json, objectType);
+            try
+            {
+                string json = File.ReadAllText(filePath);
+                return JsonSerializer.Deserialize(json, objectType);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+                
+                return null; // VER
+            }
+            finally
+            {
+                
+            }
         }
     }
 }

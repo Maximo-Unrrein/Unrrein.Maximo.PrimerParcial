@@ -33,6 +33,8 @@
             button1 = new Button();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
+            button2 = new Button();
+            linkLabel1 = new LinkLabel();
             SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(301, 244);
+            label2.Location = new Point(301, 232);
             label2.Name = "label2";
             label2.Size = new Size(95, 15);
             label2.TabIndex = 1;
@@ -59,7 +61,7 @@
             // 
             button1.Location = new Point(12, 426);
             button1.Name = "button1";
-            button1.Size = new Size(42, 23);
+            button1.Size = new Size(26, 23);
             button1.TabIndex = 2;
             button1.Text = "<";
             button1.UseVisualStyleBackColor = true;
@@ -74,10 +76,32 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(301, 262);
+            textBox2.Location = new Point(301, 250);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(221, 25);
             textBox2.TabIndex = 4;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(360, 329);
+            button2.Name = "button2";
+            button2.Size = new Size(92, 23);
+            button2.TabIndex = 5;
+            button2.Text = "Ingresar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.LinkColor = SystemColors.Highlight;
+            linkLabel1.Location = new Point(223, 287);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(403, 15);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "¿No recuerdas tu contraseña? Haga click aquí";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // FrmLogin
             // 
@@ -85,6 +109,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
+            Controls.Add(linkLabel1);
+            Controls.Add(button2);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
@@ -108,5 +134,7 @@
         private Button button1;
         private TextBox textBox1;
         private TextBox textBox2;
+        private Button button2;
+        private LinkLabel linkLabel1;
     }
 }
