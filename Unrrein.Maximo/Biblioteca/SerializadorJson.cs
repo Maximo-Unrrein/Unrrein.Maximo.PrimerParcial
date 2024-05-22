@@ -36,12 +36,16 @@ namespace Biblioteca
                 using (StreamReader sr = new StreamReader(filePath))
                 {
                     string objJson = sr.ReadToEnd();
-                    return objJson;
+                    return JsonSerializer.Deserialize(objJson, tipoDeObjeto);
                 }
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
-                throw new Exception("No se encontro el archivo");
+                throw new Exception("No se encontró el archivo: " + filePath);
+            }
+            catch (JsonException ex)
+            {
+                throw new Exception("Error deserializando el archivo JSON: " + ex.Message);
             }
         }
 

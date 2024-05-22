@@ -23,12 +23,7 @@ namespace Biblioteca
             this.Turno = null;
             this.Enfermedad = enfermedad;
         }
-        public Paciente(string nombre, string apellido, int dni, char genero, Turno turno, string enfermedad) : base(nombre, apellido, dni, genero)
-        {
-           // this.GETAndSETMembresia = membresia;
-            this.Turno = turno;
-            this.Enfermedad = enfermedad;
-        }
+
 
 
         //Propiedades
