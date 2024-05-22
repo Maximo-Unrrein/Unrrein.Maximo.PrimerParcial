@@ -69,9 +69,9 @@
             label2.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(129, 98);
             label2.Name = "label2";
-            label2.Size = new Size(71, 15);
+            label2.Size = new Size(103, 15);
             label2.TabIndex = 2;
-            label2.Text = "Consulta";
+            label2.Text = "Especialidad";
             // 
             // monthCalendar1
             // 
@@ -90,7 +90,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(129, 198);
+            comboBox2.Location = new Point(129, 195);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 23);
             comboBox2.TabIndex = 5;
@@ -107,7 +107,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(129, 180);
+            label3.Location = new Point(129, 177);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 6;

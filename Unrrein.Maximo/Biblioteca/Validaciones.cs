@@ -16,13 +16,11 @@ namespace Biblioteca
             return Regex.IsMatch(nombre, pattern);
         }
 
-        public static bool DNI(int dni)
+        public static bool DNI(string dni)
         {
-            // Convertir el DNI a string para usar regex
-            string dniStr = dni.ToString();
             // Regex para un DNI válido (8 dígitos)
             string pattern = @"^\d{8}$";
-            return Regex.IsMatch(dniStr, pattern);
+            return Regex.IsMatch(dni, pattern);
         }
 
     }

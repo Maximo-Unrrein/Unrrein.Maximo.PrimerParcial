@@ -12,9 +12,11 @@ namespace Biblioteca
         public enum RangoHorario { Mañana, Tarde, Noche};
         private DateTime dia;
         private DateTime horario;
-        private RangoHorario rangoHorariov;
+        private RangoHorario rangoHorario;
 
 
+
+        public Turno() { }
         public Turno(RangoHorario rangoHorario, DateTime dia, DateTime horario)
         {
             this.RangoHorarioP = rangoHorario;
@@ -22,9 +24,18 @@ namespace Biblioteca
             this.Horario = horario;
         }
 
-        public RangoHorario RangoHorarioP { get => this.rangoHorariov; set => this.rangoHorariov = value; }
+        public RangoHorario RangoHorarioP { get => this.rangoHorario; set => this.rangoHorario = value; }
         public DateTime Dia { get => this.dia; set => this.dia = value; }
         public DateTime Horario { get => this.horario; set => this.horario = value; }
+
+        public string Mostrar()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"Turno: {this.RangoHorarioP}");
+            sb.AppendLine($"Día: {this.Dia.ToString("dd/MM/yyyy")}");
+            sb.Append($"Hora: {this.Horario.ToString("HH:mm")}");
+            return sb.ToString();
+        }
 
         //Metodos
         

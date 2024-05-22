@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Biblioteca
@@ -10,22 +11,28 @@ namespace Biblioteca
     {
 
         //Atributos
-        public enum Membresia { Oro, Plata, Bronce};
+        //public enum Membresia { Oro, Plata, Bronce};
         protected Turno turno;
         protected string enfermedad;
-        protected Membresia membresia;
-        
+        //protected Membresia membresia;
+
         //Constructor
-        public Paciente(string nombre, string apellido, int dni, char genero, Membresia membresia, Turno turno, string enfermedad) : base(nombre, apellido, dni, genero)
+        [JsonConstructor]
+        public Paciente(string nombre, string apellido, int dni, char genero, string enfermedad) : base(nombre, apellido, dni, genero)
         {
-            this.GETAndSETMembresia = membresia;
+            this.Turno = null;
+            this.Enfermedad = enfermedad;
+        }
+        public Paciente(string nombre, string apellido, int dni, char genero, Turno turno, string enfermedad) : base(nombre, apellido, dni, genero)
+        {
+           // this.GETAndSETMembresia = membresia;
             this.Turno = turno;
             this.Enfermedad = enfermedad;
         }
 
 
         //Propiedades
-        public Membresia GETAndSETMembresia { get => this.membresia; set => this.membresia = value; }
+       // public Membresia GETAndSETMembresia { get => this.membresia; set => this.membresia = value; }
         public Turno Turno { get => this.turno; set => this.turno = value; }
         public string Enfermedad { get => this.enfermedad; set => this.enfermedad = value; }
 
@@ -38,11 +45,27 @@ namespace Biblioteca
             sb.AppendLine($"Apellido: {base.Apellido}");
             sb.AppendLine($"DNI: {base.DNI}");
             sb.AppendLine($"Genero: {base.Genero}");
-            sb.AppendLine($"Membresia: {this.GETAndSETMembresia}");
-            sb.AppendLine($"Turno: {this.Turno}");
+            //sb.AppendLine($"Membresia: {this.GETAndSETMembresia}");
+            sb.AppendLine($"{this.Turno.Mostrar()}");
             sb.AppendLine($"Enfermedad:{this.Enfermedad}");
 
             return sb.ToString();
+        }
+
+        public override string ToString()
+        {
+            return this.Mostrar(); //VER NO OPTIMIZADO
+        }
+        public override bool Equals(Persona p)
+        {
+            // Si el objeto pasado es null, retorna false
+            if (p == null)
+            {
+                return false;
+            }
+
+            // Usa el método GetType() para comparar los tipos de las dos instancias
+            return this.GetType() == p.GetType();
         }
     }
 }

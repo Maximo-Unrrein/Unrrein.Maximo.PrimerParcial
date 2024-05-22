@@ -62,22 +62,12 @@ namespace Biblioteca
 
         //Metodos
         public abstract string Mostrar();
-
-        /*
-        private bool ValidacionNombreApellido(string valor)
-        {
-            if (!string.IsNullOrEmpty(valor) && Regex.IsMatch(valor, @"\d"))
-            {
-                return true;
-            }
-            return false;
-        }*/
-
-
-
+        public abstract string ToString();
+        public abstract bool Equals(Persona p);
+       
         public static bool operator ==(Persona p1, Persona p2)
         {
-            if(p1.dni == p2.dni && p1.GetHashCode() != p2.GetHashCode())
+            if(p1.DNI == p2.DNI && p1.GetHashCode() != p2.GetHashCode()) //NOSE SI VA EL GETHASHCODE o PONER OTRA PROPIEDADE
             {
                 return true;
             }
@@ -87,6 +77,11 @@ namespace Biblioteca
         {
             return !(p1 == p2);
         }
+
+
+
+
+
 
     }
 }

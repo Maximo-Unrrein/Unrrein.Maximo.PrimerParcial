@@ -49,7 +49,21 @@ namespace Biblioteca
             
             return  sb.ToString();
         }
+        public override string ToString()
+        {
+            return this.Mostrar(); //VER NO OPTIMIZADO
+        }
+        public override bool Equals(Persona p)
+        {
+            // Si el objeto pasado es null, retorna false
+            if (p == null)
+            {
+                return false;
+            }
 
+            // Usa el método GetType() para comparar los tipos de las dos instancias
+            return this.GetType() == p.GetType();
+        }
 
 
         public static bool operator ==(Doctor doctor, Paciente paciente)

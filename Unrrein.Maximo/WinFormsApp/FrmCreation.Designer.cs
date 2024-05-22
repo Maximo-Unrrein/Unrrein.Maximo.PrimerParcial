@@ -39,14 +39,15 @@
             button1 = new Button();
             btnCrearUsuario = new Button();
             grpBoxDatosPersona = new GroupBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtBoxDNIPersona = new TextBox();
+            txtBoxApellidoPersona = new TextBox();
+            txtBoxNombrePersona = new TextBox();
+            cmbBoxGeneroPersona = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
+            lblConfirmacionCreacionUsuario = new Label();
             grpBoxDatosPersona.SuspendLayout();
             SuspendLayout();
             // 
@@ -137,13 +138,14 @@
             btnCrearUsuario.TabIndex = 9;
             btnCrearUsuario.Text = "Crear Usuario";
             btnCrearUsuario.UseVisualStyleBackColor = true;
+            btnCrearUsuario.Click += btnCrearUsuario_Click;
             // 
             // grpBoxDatosPersona
             // 
-            grpBoxDatosPersona.Controls.Add(textBox6);
-            grpBoxDatosPersona.Controls.Add(textBox5);
-            grpBoxDatosPersona.Controls.Add(textBox4);
-            grpBoxDatosPersona.Controls.Add(comboBox1);
+            grpBoxDatosPersona.Controls.Add(txtBoxDNIPersona);
+            grpBoxDatosPersona.Controls.Add(txtBoxApellidoPersona);
+            grpBoxDatosPersona.Controls.Add(txtBoxNombrePersona);
+            grpBoxDatosPersona.Controls.Add(cmbBoxGeneroPersona);
             grpBoxDatosPersona.Controls.Add(label9);
             grpBoxDatosPersona.Controls.Add(label8);
             grpBoxDatosPersona.Controls.Add(label7);
@@ -155,34 +157,35 @@
             grpBoxDatosPersona.TabStop = false;
             grpBoxDatosPersona.Text = "Datos persona";
             // 
-            // textBox6
+            // txtBoxDNIPersona
             // 
-            textBox6.Location = new Point(152, 123);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(194, 25);
-            textBox6.TabIndex = 7;
+            txtBoxDNIPersona.Location = new Point(152, 123);
+            txtBoxDNIPersona.Name = "txtBoxDNIPersona";
+            txtBoxDNIPersona.Size = new Size(194, 25);
+            txtBoxDNIPersona.TabIndex = 7;
             // 
-            // textBox5
+            // txtBoxApellidoPersona
             // 
-            textBox5.Location = new Point(152, 79);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(194, 25);
-            textBox5.TabIndex = 6;
+            txtBoxApellidoPersona.Location = new Point(152, 79);
+            txtBoxApellidoPersona.Name = "txtBoxApellidoPersona";
+            txtBoxApellidoPersona.Size = new Size(194, 25);
+            txtBoxApellidoPersona.TabIndex = 6;
             // 
-            // textBox4
+            // txtBoxNombrePersona
             // 
-            textBox4.Location = new Point(152, 34);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(194, 25);
-            textBox4.TabIndex = 5;
+            txtBoxNombrePersona.Location = new Point(152, 34);
+            txtBoxNombrePersona.Name = "txtBoxNombrePersona";
+            txtBoxNombrePersona.Size = new Size(194, 25);
+            txtBoxNombrePersona.TabIndex = 5;
             // 
-            // comboBox1
+            // cmbBoxGeneroPersona
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(152, 166);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(194, 23);
-            comboBox1.TabIndex = 4;
+            cmbBoxGeneroPersona.FormattingEnabled = true;
+            cmbBoxGeneroPersona.Items.AddRange(new object[] { "F", "M" });
+            cmbBoxGeneroPersona.Location = new Point(152, 166);
+            cmbBoxGeneroPersona.Name = "cmbBoxGeneroPersona";
+            cmbBoxGeneroPersona.Size = new Size(194, 23);
+            cmbBoxGeneroPersona.TabIndex = 4;
             // 
             // label9
             // 
@@ -224,12 +227,21 @@
             label6.TabIndex = 0;
             label6.Text = "Nombre    ===>";
             // 
+            // lblConfirmacionCreacionUsuario
+            // 
+            lblConfirmacionCreacionUsuario.AutoSize = true;
+            lblConfirmacionCreacionUsuario.Location = new Point(105, 365);
+            lblConfirmacionCreacionUsuario.Name = "lblConfirmacionCreacionUsuario";
+            lblConfirmacionCreacionUsuario.Size = new Size(0, 15);
+            lblConfirmacionCreacionUsuario.TabIndex = 11;
+            // 
             // FrmCreation
             // 
             AutoScaleDimensions = new SizeF(9F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
+            Controls.Add(lblConfirmacionCreacionUsuario);
             Controls.Add(grpBoxDatosPersona);
             Controls.Add(btnCrearUsuario);
             Controls.Add(button1);
@@ -264,13 +276,14 @@
         private Button button1;
         private Button btnCrearUsuario;
         private GroupBox grpBoxDatosPersona;
-        private TextBox textBox6;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private ComboBox comboBox1;
+        private TextBox txtBoxDNIPersona;
+        private TextBox txtBoxApellidoPersona;
+        private TextBox txtBoxNombrePersona;
+        private ComboBox cmbBoxGeneroPersona;
         private Label label9;
         private Label label8;
         private Label label7;
         private Label label6;
+        private Label lblConfirmacionCreacionUsuario;
     }
 }
