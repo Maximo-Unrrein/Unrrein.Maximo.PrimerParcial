@@ -36,7 +36,7 @@
             txtBoxUsuario = new TextBox();
             txtBoxContraseña = new TextBox();
             txtBoxConfirmarContraseña = new TextBox();
-            button1 = new Button();
+            btnBack = new Button();
             btnCrearUsuario = new Button();
             grpBoxDatosPersona = new GroupBox();
             txtBoxDNIPersona = new TextBox();
@@ -120,15 +120,15 @@
             txtBoxConfirmarContraseña.Size = new Size(212, 25);
             txtBoxConfirmarContraseña.TabIndex = 7;
             // 
-            // button1
+            // btnBack
             // 
-            button1.Location = new Point(12, 426);
-            button1.Name = "button1";
-            button1.Size = new Size(26, 23);
-            button1.TabIndex = 8;
-            button1.Text = "<";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnBack.Location = new Point(12, 426);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(26, 23);
+            btnBack.TabIndex = 8;
+            btnBack.Text = "<";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // btnCrearUsuario
             // 
@@ -244,7 +244,7 @@
             Controls.Add(lblConfirmacionCreacionUsuario);
             Controls.Add(grpBoxDatosPersona);
             Controls.Add(btnCrearUsuario);
-            Controls.Add(button1);
+            Controls.Add(btnBack);
             Controls.Add(txtBoxConfirmarContraseña);
             Controls.Add(txtBoxContraseña);
             Controls.Add(txtBoxUsuario);
@@ -255,7 +255,11 @@
             Controls.Add(label1);
             Font = new Font("SimSun", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "FrmCreation";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Creation";
             grpBoxDatosPersona.ResumeLayout(false);
             grpBoxDatosPersona.PerformLayout();
@@ -273,7 +277,7 @@
         private TextBox txtBoxUsuario;
         private TextBox txtBoxContraseña;
         private TextBox txtBoxConfirmarContraseña;
-        private Button button1;
+        private Button btnBack;
         private Button btnCrearUsuario;
         private GroupBox grpBoxDatosPersona;
         private TextBox txtBoxDNIPersona;

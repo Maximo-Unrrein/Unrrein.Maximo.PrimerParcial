@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             lblBienvenido = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btnIngresar = new Button();
+            btnRegistrarse = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -47,25 +47,25 @@
             lblBienvenido.TabIndex = 0;
             lblBienvenido.Text = "¡ Bienvenido !";
             // 
-            // button1
+            // btnIngresar
             // 
-            button1.Location = new Point(335, 199);
-            button1.Name = "button1";
-            button1.Size = new Size(120, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Ingresar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnIngresar.Location = new Point(335, 199);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(120, 23);
+            btnIngresar.TabIndex = 1;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
-            // button2
+            // btnRegistrarse
             // 
-            button2.Location = new Point(334, 306);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Registrarse";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnRegistrarse.Location = new Point(334, 306);
+            btnRegistrarse.Name = "btnRegistrarse";
+            btnRegistrarse.Size = new Size(120, 23);
+            btnRegistrarse.TabIndex = 2;
+            btnRegistrarse.Text = "Registrarse";
+            btnRegistrarse.UseVisualStyleBackColor = true;
+            btnRegistrarse.Click += btnRegistrarse_Click;
             // 
             // label1
             // 
@@ -116,13 +116,14 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnRegistrarse);
+            Controls.Add(btnIngresar);
             Controls.Add(lblBienvenido);
             Font = new Font("SimSun", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
@@ -134,8 +135,8 @@
         #endregion
 
         private Label lblBienvenido;
-        private Button button1;
-        private Button button2;
+        private Button btnIngresar;
+        private Button btnRegistrarse;
         private Label label1;
         private Label label2;
         private Label label3;

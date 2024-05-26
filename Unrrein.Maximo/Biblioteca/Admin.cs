@@ -8,30 +8,58 @@ namespace Biblioteca
 {
     public class Admin
     {
-        private static List<Persona> listaPersonas;
+        private static List<Usuario> listaUsuarios;
+        private static List<Doctor> listaDoctor;
+        
         static Admin()
         {
-            Admin.ListaPersonas = new List<Persona>();
+            Admin.ListaUsuarios = new List<Usuario>();
+            Admin.ListaDoctor = new List<Doctor>();
+
         }
 
-        public static List<Persona> ListaPersonas
+        public static List<Usuario> ListaUsuarios
         {
             get
             {
-                return Admin.listaPersonas;
+                return Admin.listaUsuarios;
             }
             set
             {
-                Admin.listaPersonas = value;
+                Admin.listaUsuarios = value;
+            }
+        } 
+        
+        public static List<Doctor> ListaDoctor
+        {
+            get
+            {
+                return Admin.listaDoctor;
+            }
+            set
+            {
+                Admin.listaDoctor = value;
             }
         }
 
 
-        public static bool BuscarPersona(Persona persona)
+        public static bool BuscarPersona(Usuario usuario)
         {
-            foreach (Persona pComparison in Admin.listaPersonas)
+            foreach (Usuario uComparison in Admin.ListaUsuarios)
             {
-                if (persona == pComparison)
+                if (usuario == uComparison)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        public static bool BuscarPersona(Doctor doctor)
+        {
+            foreach (Doctor dComparison in Admin.ListaDoctor)
+            {
+                if (doctor == dComparison)
                 {
                     return true;
                 }

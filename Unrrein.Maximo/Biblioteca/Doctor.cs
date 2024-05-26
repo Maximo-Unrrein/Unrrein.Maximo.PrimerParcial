@@ -34,8 +34,8 @@ namespace Biblioteca
         public string Especialidad { get => this.especialidad; set => this.especialidad = value; }
 
 
-        //MEtodos
-        public override string Mostrar()
+        //Metodos
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine($"Nombre: {base.Nombre}");
@@ -46,13 +46,10 @@ namespace Biblioteca
             sb.AppendLine($"Turno: {this.Turno}");
             sb.AppendLine($"Horarios de Atención: {this.Turno}");
             sb.AppendLine($"Lista de pacientes:\n{this.ListaPacientes}");
-            
-            return  sb.ToString();
+
+            return sb.ToString();
         }
-        public override string ToString()
-        {
-            return this.Mostrar(); //VER NO OPTIMIZADO
-        }
+
         public override bool Equals(Persona p)
         {
             // Si el objeto pasado es null, retorna false

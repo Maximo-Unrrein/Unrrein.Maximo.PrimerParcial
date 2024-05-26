@@ -9,12 +9,15 @@ namespace Biblioteca
 {
     public sealed class Paciente : Persona
     {
-
+        
         //Atributos
-        //public enum Membresia { Oro, Plata, Bronce};
         protected Turno turno;
         protected string enfermedad;
-        //protected Membresia membresia;
+
+
+        public Paciente() : base()
+        {
+        }
 
         //Constructor
         [JsonConstructor]
@@ -24,32 +27,44 @@ namespace Biblioteca
             this.Enfermedad = enfermedad;
         }
 
+        public Paciente(string nombre, string apellido, int dni, char genero) : base(nombre, apellido, dni, genero)
+        {
+            this.Turno = null;
+            this.Enfermedad = null;
+        }
+
 
 
         //Propiedades
-       // public Membresia GETAndSETMembresia { get => this.membresia; set => this.membresia = value; }
         public Turno Turno { get => this.turno; set => this.turno = value; }
         public string Enfermedad { get => this.enfermedad; set => this.enfermedad = value; }
 
 
-        //MEtodos
-        public override string Mostrar()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Nombre: {base.Nombre}");
-            sb.AppendLine($"Apellido: {base.Apellido}");
-            sb.AppendLine($"DNI: {base.DNI}");
-            sb.AppendLine($"Genero: {base.Genero}");
-            //sb.AppendLine($"Membresia: {this.GETAndSETMembresia}");
-            sb.AppendLine($"{this.Turno.Mostrar()}");
-            sb.AppendLine($"Enfermedad:{this.Enfermedad}");
-
-            return sb.ToString();
-        }
-
+        //Metodos
         public override string ToString()
         {
-            return this.Mostrar(); //VER NO OPTIMIZADO
+            StringBuilder sb = new StringBuilder();
+
+            if(this.Turno != null)
+            {
+                sb.AppendLine($"Nombre: {base.Nombre}");
+                sb.AppendLine($"Apellido: {base.Apellido}");
+                sb.AppendLine($"DNI: {base.DNI}");
+                sb.AppendLine($"Genero: {base.Genero}");
+                sb.AppendLine($"{this.Turno.Mostrar()}");
+                sb.AppendLine($"Enfermedad:{this.Enfermedad}");
+            }
+            else
+            {
+                sb.AppendLine($"Nombre: {base.Nombre}");
+                sb.AppendLine($"Apellido: {base.Apellido}");
+                sb.AppendLine($"DNI: {base.DNI}");
+                sb.AppendLine($"Genero: {base.Genero}");
+                sb.AppendLine($"Enfermedad:{this.Enfermedad}");
+            }
+
+
+            return sb.ToString();
         }
         public override bool Equals(Persona p)
         {

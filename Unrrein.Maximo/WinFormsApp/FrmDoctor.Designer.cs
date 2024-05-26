@@ -40,7 +40,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(152, 115);
+            label1.Location = new Point(201, 115);
             label1.Name = "label1";
             label1.Size = new Size(71, 15);
             label1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // button2
             // 
             button2.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(152, 267);
+            button2.Location = new Point(152, 298);
             button2.Name = "button2";
             button2.Size = new Size(173, 93);
             button2.TabIndex = 3;
@@ -80,7 +80,7 @@
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(152, 133);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(173, 23);
             comboBox1.TabIndex = 4;
             // 
             // listBox1
@@ -106,7 +106,11 @@
             Controls.Add(label1);
             Font = new Font("SimSun", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "FrmDoctor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmDoctor";
             ResumeLayout(false);
             PerformLayout();

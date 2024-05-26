@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnBack = new Button();
             label1 = new Label();
             label2 = new Label();
             monthCalendar1 = new MonthCalendar();
@@ -43,15 +43,15 @@
             label6 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnBack
             // 
-            button1.Location = new Point(12, 426);
-            button1.Name = "button1";
-            button1.Size = new Size(29, 23);
-            button1.TabIndex = 0;
-            button1.Text = "<";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnBack.Location = new Point(12, 426);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(23, 23);
+            btnBack.TabIndex = 0;
+            btnBack.Text = "<";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // label1
             // 
@@ -178,10 +178,14 @@
             Controls.Add(monthCalendar1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnBack);
             Font = new Font("SimSun", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            MinimizeBox = false;
             Name = "FrmPaciente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPaciente";
             ResumeLayout(false);
             PerformLayout();
@@ -189,7 +193,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnBack;
         private Label label1;
         private Label label2;
         private MonthCalendar monthCalendar1;

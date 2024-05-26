@@ -1,4 +1,6 @@
-﻿using System.Text.RegularExpressions;
+﻿using Biblioteca.excepciones;
+using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 
 namespace Biblioteca
 {
@@ -11,6 +13,13 @@ namespace Biblioteca
         private int dni;
         private char genero;
 
+
+        // Agregar constructor sin parámetros /ERROR PARA DESERIALIZAR
+        public Persona()
+        {
+        }
+
+        [JsonConstructor]
         public Persona(string nombre, string apellido, int dni, char genero) 
         {
             this.Nombre = nombre;
@@ -27,8 +36,14 @@ namespace Biblioteca
             get => this.nombre;
             set 
             {
-                this.nombre = value;
-                
+                if(Validaciones.NombreYApellido(value))
+                {
+                    this.nombre = value;
+                }
+                else
+                {
+                    throw new NombreInvalidoException("Nombre Invalido");
+                }
             } 
         }
         public string Apellido
@@ -36,8 +51,14 @@ namespace Biblioteca
             get => this.apellido;
             set
             {
-                this.apellido = value;
-
+                if (Validaciones.NombreYApellido(value))
+                {
+                    this.apellido = value;
+                }
+                else
+                {
+                    throw new ApellidoInvalidoException("Apellido Invalido");
+                }
             }
         }
         public int DNI
@@ -45,7 +66,14 @@ namespace Biblioteca
             get => this.dni;
             set
             {
-                this.dni = value;
+                if (Validaciones.DNI($"{value}"))
+                {
+                    this.dni = value;
+                }
+                else
+                {
+                    throw new DniInvalidoException("Dni Invalido");
+                }
 
             }
         }
@@ -54,17 +82,20 @@ namespace Biblioteca
             get => this.genero;
             set
             {
-                this.genero = value;
-
+                if(value != null)
+                {
+                    this.genero = value;
+                }
             }
         }
 
 
         //Metodos
-        public abstract string Mostrar();
         public abstract string ToString();
         public abstract bool Equals(Persona p);
        
+
+        // Dentro de los metodos -> sobrecarga de operadores
         public static bool operator ==(Persona p1, Persona p2)
         {
             if(p1.DNI == p2.DNI && p1.GetHashCode() != p2.GetHashCode()) //NOSE SI VA EL GETHASHCODE o PONER OTRA PROPIEDADE

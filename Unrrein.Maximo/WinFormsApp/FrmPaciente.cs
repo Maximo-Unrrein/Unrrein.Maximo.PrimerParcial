@@ -17,10 +17,10 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMenu login = new FrmMenu();
+            FrmLogin login = new FrmLogin();
             login.ShowDialog();
         }
     }

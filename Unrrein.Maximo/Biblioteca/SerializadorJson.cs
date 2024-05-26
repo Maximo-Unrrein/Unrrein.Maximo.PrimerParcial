@@ -18,13 +18,14 @@ namespace Biblioteca
                 using (StreamWriter sw = new StreamWriter(filePath))    //IMPORTANTE: sino tiene propiedades get set no funciona
                 {
                     string objJson = JsonSerializer.Serialize(obj, options);
+                    
 
                     sw.WriteLine(objJson);
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error inesperado . . .");
+                throw new Exception("Error inesperado . . .", ex);
             }
         }
 

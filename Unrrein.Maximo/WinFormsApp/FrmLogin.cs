@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,23 +18,38 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FrmMenu login = new FrmMenu();
-            login.ShowDialog();
+            FrmMenu frmMenu = new FrmMenu();
+            frmMenu.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnIngresar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FrmPaciente frmPaciente = new FrmPaciente();
-            frmPaciente.ShowDialog();
+            foreach (Usuario usuario in Admin.ListaUsuarios)
+            {
+                if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario)
+                {
+                    this.Hide();
+                    FrmPaciente frmPaciente = new FrmPaciente();
+                    frmPaciente.ShowDialog();
+                }
+                else
+                {
+                    lblConfirmacion.Text = "No existe usuario con Nombre/Contraseña similares";
+                }
+            }
+
+
+
+
+
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+
         }
     }
 }

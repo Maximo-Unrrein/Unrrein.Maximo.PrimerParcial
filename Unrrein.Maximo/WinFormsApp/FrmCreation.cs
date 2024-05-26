@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.excepciones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +21,7 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
             FrmMenu login = new FrmMenu();
@@ -29,6 +30,7 @@ namespace WinFormsApp
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
+
             bool validaciones = true;
 
             //Datos persona
@@ -37,60 +39,39 @@ namespace WinFormsApp
             TextBox groupBoxDNI = (TextBox)grpBoxDatosPersona.Controls["txtBoxDNIPersona"];
             ComboBox groupBoxGenero = (ComboBox)grpBoxDatosPersona.Controls["cmbBoxGeneroPersona"];
 
-            // Validar nombre
-            if (groupBoxNombre == null || !Validaciones.NombreYApellido(groupBoxNombre.Text))
+
+
+            try
+            {
+                Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
+                Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now);
+
+                Admin.ListaUsuarios.Add(usuarioNuevo);
+                SerializadorJson.Serializacion(Admin.ListaUsuarios, "ListaUsuarios.json");
+            } 
+            //catch (FormatException ex)
+            //{
+            //    validaciones = false;
+            //    throw new DniInvalidoException("Dni Invalido");
+
+            //}
+            catch (Exception ex)
             {
                 validaciones = false;
+                //MessageBox.Show("Argumento invalido");
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Validar apellido
-            if (groupBoxApellido == null || !Validaciones.NombreYApellido(groupBoxApellido.Text))
-            {
-                validaciones = false;
-            }
-
-            // Validar DNI
-            if (groupBoxDNI == null || !Validaciones.DNI(groupBoxDNI.Text))
-            {
-                validaciones = false;
-            }
-
-            // Validar género
-            if (groupBoxGenero == null || groupBoxGenero.SelectedIndex == -1)
-            {
-                validaciones = false;
-            }
-
-            // Validar usuario
-            if (string.IsNullOrEmpty(txtBoxUsuario.Text))
-            {
-                validaciones = false;
-            }
-
-            // Validar contraseña
-            if (string.IsNullOrEmpty(txtBoxContraseña.Text))
-            {
-                validaciones = false;
-            }
-
-            // Validar confirmación de contraseña
-            if (string.IsNullOrEmpty(txtBoxConfirmarContraseña.Text))
-            {
-                validaciones = false;
-            }
-
-            if(txtBoxContraseña.Text != txtBoxConfirmarContraseña.Text) 
-            {
-                validaciones = false;
-            }
 
 
             // Mostrar resultado de validación
             if (validaciones)
             {
-                // Aquí iría la lógica para crear el usuario
+
                 lblConfirmacionCreacionUsuario.ForeColor = Color.Green;
                 lblConfirmacionCreacionUsuario.Text = "Usuario creado correctamente";
+
+
 
                 // Reseteo de textos
                 groupBoxNombre.Text = string.Empty;

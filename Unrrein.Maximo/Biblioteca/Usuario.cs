@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Biblioteca
@@ -13,6 +14,13 @@ namespace Biblioteca
         private string contraseñaUsuario;
         private DateTime horarioIngreso;
 
+
+        //Agregar constructor sin parámetros /ERROR DESERILIZACION
+        public Usuario()
+        {
+        }
+
+        [JsonConstructor]
         public Usuario(Persona persona, string nombreUsuario, string contraseñaUsuario, DateTime horarioIngreso)
         {
             this.Persona = persona;
@@ -23,16 +31,16 @@ namespace Biblioteca
 
         //Propiedades
         public Persona Persona { get => this.persona ; set => this.persona = value;}
-        public string NombreUsuario { get => this.nombreUsuario ; set => this.nombreUsuario = value;}
-        public string ContraseñaUsuario { get => this.contraseñaUsuario; set => this.contraseñaUsuario = value;}
+        public string NombreUsuario { get => this.nombreUsuario; set { if (value != null) { this.nombreUsuario = value; }; }  }
+        public string ContraseñaUsuario { get => this.contraseñaUsuario; set { if (value != null) { this.contraseñaUsuario = value; }; } }
         public DateTime HorarioIngreso { get => this.horarioIngreso; set => this.horarioIngreso = value;}
 
-        public string Tostring()
+        public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Persona.ToString());
-            sb.Append($"Usuario: {this.NombreUsuario}");
-            sb.Append($"Contraseña: {this.ContraseñaUsuario}");
+            sb.AppendLine($"Usuario: {this.NombreUsuario}");
+            sb.AppendLine($"Contraseña: {this.ContraseñaUsuario}");
             sb.Append($"Horario de Ingreso: {this.HorarioIngreso}");
             
             return sb.ToString();
