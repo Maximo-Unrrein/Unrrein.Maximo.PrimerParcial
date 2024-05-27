@@ -10,37 +10,29 @@ namespace Biblioteca
     {
         //Atributos
         private List<Paciente> listaPacientes;
-        private int[] horariosAtencion;
-        private List<int> dias;
-        private string turno;
-        private string especialidad;
+        private RangoHorario horariosAtencion;
+        private Especialidades especialidad;
 
         //Constructor
-        public Doctor(string nombre, string apellido, int dni, char genero,  string especialidad) : base(nombre, apellido, dni, genero)
+        public Doctor(string nombre, string apellido, int dni, char genero, RangoHorario horarioAtencion, Especialidades especialidad) : base(nombre, apellido, dni, genero)
         {
             this.especialidad = especialidad;
 
             this.listaPacientes = new List<Paciente> { };
-            this.turno = null;
-            this.horariosAtencion = null;
-            this.dias = null;
+            this.horariosAtencion = horarioAtencion;
         }
-        public Doctor(string nombre, string apellido, int dni, char genero, List<Paciente> listaPacientes, int[] horarioAtencion, List<int> dias, string turno, string especialidad) : base(nombre, apellido, dni, genero)
+        public Doctor(string nombre, string apellido, int dni, char genero, List<Paciente> listaPacientes, RangoHorario horarioAtencion, Especialidades especialidad) : base(nombre, apellido, dni, genero)
         {
             this.listaPacientes = listaPacientes;
-            this.turno = turno;
             this.horariosAtencion = horarioAtencion;
-            this.dias = dias;
             this.especialidad = especialidad;
         }
 
 
         //Propiedades
         public List<Paciente> ListaPacientes { get => this.listaPacientes; set => this.listaPacientes = value; }
-        public int[] HorariosAtencion{ get => this.horariosAtencion; set => this.horariosAtencion = value; }
-        public List<int> Dias{ get => this.dias; set => this.dias = value; }
-        public string Turno { get => this.turno; set => this.turno = value; }
-        public string Especialidad { get => this.especialidad; set => this.especialidad = value; }
+        public RangoHorario HorariosAtencion{ get => this.horariosAtencion; set => this.horariosAtencion = value; }
+        public Especialidades Especialidad { get => this.especialidad; set => this.especialidad = value; }
 
 
         //Metodos
@@ -52,8 +44,7 @@ namespace Biblioteca
             sb.AppendLine($"DNI: {base.DNI}");
             sb.AppendLine($"Genero: {base.Genero}");
             sb.AppendLine($"Especialidad: {this.Especialidad}");
-            sb.AppendLine($"Turno: {this.Turno}");
-            sb.AppendLine($"Horarios de Atención: {this.Turno}");
+            
             sb.AppendLine($"Lista de pacientes:\n{this.ListaPacientes}");
 
             return sb.ToString();

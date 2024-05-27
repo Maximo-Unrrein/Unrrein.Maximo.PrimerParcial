@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormsApp
 {
     public partial class FrmRecuperacionContraseña : Form
@@ -20,6 +21,8 @@ namespace WinFormsApp
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            bool usuarioEncontrado = false;
+
             foreach (Usuario usuario in Admin.ListaUsuarios)
             {
                 if (txtBoxUsuario.Text == usuario.NombreUsuario)
@@ -32,14 +35,27 @@ namespace WinFormsApp
                     lblConfirmacion.ForeColor = Color.Green;
                     lblConfirmacion.Text = "Cambio de contraseña correctamente ejecutado";
 
-
+                    usuarioEncontrado = true;
+                    break;
                 }
-                else
+            }
+
+            if (!usuarioEncontrado)
+            {
+                lblConfirmacion.ForeColor = Color.Red;
+                lblConfirmacion.Text = "Usuario no existe";
+            }
+            else
+            {
+                // Crear un temporizador para esperar 1 segundo antes de cerrar el formulario
+                System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+                timer.Interval = 1000; // 1 segundo
+                timer.Tick += (s, args) =>
                 {
-                    lblConfirmacion.ForeColor = Color.Red;
-                    lblConfirmacion.Text = "Usuario no existe";
-
-                }
+                    timer.Stop(); // Detener el temporizador
+                    this.Close(); // Cerrar el formulario
+                };
+                timer.Start(); // Iniciar el temporizador
             }
         }
 

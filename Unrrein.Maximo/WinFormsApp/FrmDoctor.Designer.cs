@@ -32,7 +32,7 @@
             label2 = new Label();
             btnBack = new Button();
             btnMostrarDatosPaciente = new Button();
-            cmbBoxPaciente = new ComboBox();
+            cmbBoxPacientes = new ComboBox();
             lstBoxDatos = new ListBox();
             SuspendLayout();
             // 
@@ -75,14 +75,16 @@
             btnMostrarDatosPaciente.TabIndex = 3;
             btnMostrarDatosPaciente.Text = "Mostrar Datos del paciente";
             btnMostrarDatosPaciente.UseVisualStyleBackColor = true;
+            btnMostrarDatosPaciente.Click += btnMostrarDatosPaciente_Click;
             // 
-            // cmbBoxPaciente
+            // cmbBoxPacientes
             // 
-            cmbBoxPaciente.FormattingEnabled = true;
-            cmbBoxPaciente.Location = new Point(152, 133);
-            cmbBoxPaciente.Name = "cmbBoxPaciente";
-            cmbBoxPaciente.Size = new Size(173, 23);
-            cmbBoxPaciente.TabIndex = 4;
+            cmbBoxPacientes.AllowDrop = true;
+            cmbBoxPacientes.FormattingEnabled = true;
+            cmbBoxPacientes.Location = new Point(152, 133);
+            cmbBoxPacientes.Name = "cmbBoxPacientes";
+            cmbBoxPacientes.Size = new Size(173, 23);
+            cmbBoxPacientes.TabIndex = 4;
             // 
             // lstBoxDatos
             // 
@@ -100,7 +102,7 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
             Controls.Add(lstBoxDatos);
-            Controls.Add(cmbBoxPaciente);
+            Controls.Add(cmbBoxPacientes);
             Controls.Add(btnMostrarDatosPaciente);
             Controls.Add(btnBack);
             Controls.Add(label2);
@@ -123,7 +125,7 @@
         private Label label2;
         private Button btnBack;
         private Button btnMostrarDatosPaciente;
-        private ComboBox cmbBoxPaciente;
+        private ComboBox cmbBoxPacientes;
         private ListBox lstBoxDatos;
     }
 }

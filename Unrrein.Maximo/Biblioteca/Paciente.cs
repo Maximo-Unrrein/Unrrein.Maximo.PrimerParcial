@@ -9,15 +9,12 @@ namespace Biblioteca
 {
     public sealed class Paciente : Persona
     {
-        
+        #region Atributos
         //Atributos
         protected Turno turno;
         protected string enfermedad;
+        #endregion
 
-
-        public Paciente() : base()
-        {
-        }
 
         //Constructor
         [JsonConstructor]
@@ -32,8 +29,6 @@ namespace Biblioteca
             this.Turno = null;
             this.Enfermedad = null;
         }
-
-
 
         //Propiedades
         public Turno Turno { get => this.turno; set => this.turno = value; }

@@ -32,14 +32,14 @@
             label1 = new Label();
             label2 = new Label();
             monthCalendar1 = new MonthCalendar();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox3 = new ComboBox();
+            cmbBoxEspecialidad = new ComboBox();
+            cmbBoxDoctor = new ComboBox();
+            cmbBoxHora = new ComboBox();
             label3 = new Label();
-            button2 = new Button();
+            btnConfirmarTurno = new Button();
             label4 = new Label();
             label5 = new Label();
-            listBox1 = new ListBox();
+            lstBoxDatosDelTurno = new ListBox();
             label6 = new Label();
             SuspendLayout();
             // 
@@ -79,48 +79,50 @@
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbBoxEspecialidad
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(129, 116);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            cmbBoxEspecialidad.FormattingEnabled = true;
+            cmbBoxEspecialidad.Location = new Point(129, 116);
+            cmbBoxEspecialidad.Name = "cmbBoxEspecialidad";
+            cmbBoxEspecialidad.Size = new Size(186, 23);
+            cmbBoxEspecialidad.TabIndex = 4;
+            cmbBoxEspecialidad.SelectedIndexChanged += cmbBoxEspecialidad_SelectedIndexChanged;
             // 
-            // comboBox2
+            // cmbBoxDoctor
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(129, 195);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 5;
+            cmbBoxDoctor.FormattingEnabled = true;
+            cmbBoxDoctor.Location = new Point(129, 197);
+            cmbBoxDoctor.Name = "cmbBoxDoctor";
+            cmbBoxDoctor.Size = new Size(186, 23);
+            cmbBoxDoctor.TabIndex = 5;
             // 
-            // comboBox3
+            // cmbBoxHora
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(129, 272);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(121, 23);
-            comboBox3.TabIndex = 7;
+            cmbBoxHora.FormattingEnabled = true;
+            cmbBoxHora.Location = new Point(129, 272);
+            cmbBoxHora.Name = "cmbBoxHora";
+            cmbBoxHora.Size = new Size(186, 23);
+            cmbBoxHora.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(129, 177);
+            label3.Location = new Point(129, 179);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
             label3.TabIndex = 6;
             label3.Text = "Doctor";
             // 
-            // button2
+            // btnConfirmarTurno
             // 
-            button2.Location = new Point(376, 272);
-            button2.Name = "button2";
-            button2.Size = new Size(248, 23);
-            button2.TabIndex = 8;
-            button2.Text = "Confirmar Turno";
-            button2.UseVisualStyleBackColor = true;
+            btnConfirmarTurno.Location = new Point(376, 272);
+            btnConfirmarTurno.Name = "btnConfirmarTurno";
+            btnConfirmarTurno.Size = new Size(248, 23);
+            btnConfirmarTurno.TabIndex = 8;
+            btnConfirmarTurno.Text = "Confirmar Turno";
+            btnConfirmarTurno.UseVisualStyleBackColor = true;
+            btnConfirmarTurno.Click += btnConfirmarTurno_Click;
             // 
             // label4
             // 
@@ -141,14 +143,14 @@
             label5.TabIndex = 10;
             label5.Text = "-------";
             // 
-            // listBox1
+            // lstBoxDatosDelTurno
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(129, 351);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(495, 64);
-            listBox1.TabIndex = 11;
+            lstBoxDatosDelTurno.FormattingEnabled = true;
+            lstBoxDatosDelTurno.ItemHeight = 15;
+            lstBoxDatosDelTurno.Location = new Point(129, 351);
+            lstBoxDatosDelTurno.Name = "lstBoxDatosDelTurno";
+            lstBoxDatosDelTurno.Size = new Size(495, 64);
+            lstBoxDatosDelTurno.TabIndex = 11;
             // 
             // label6
             // 
@@ -167,14 +169,14 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(761, 461);
             Controls.Add(label6);
-            Controls.Add(listBox1);
+            Controls.Add(lstBoxDatosDelTurno);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(button2);
-            Controls.Add(comboBox3);
+            Controls.Add(btnConfirmarTurno);
+            Controls.Add(cmbBoxHora);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbBoxDoctor);
+            Controls.Add(cmbBoxEspecialidad);
             Controls.Add(monthCalendar1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -197,14 +199,14 @@
         private Label label1;
         private Label label2;
         private MonthCalendar monthCalendar1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox cmbBoxEspecialidad;
+        private ComboBox cmbBoxDoctor;
+        private ComboBox cmbBoxHora;
         private Label label3;
-        private Button button2;
+        private Button btnConfirmarTurno;
         private Label label4;
         private Label label5;
-        private ListBox listBox1;
+        private ListBox lstBoxDatosDelTurno;
         private Label label6;
     }
 }

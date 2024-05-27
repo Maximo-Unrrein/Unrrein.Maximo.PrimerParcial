@@ -31,12 +31,17 @@ namespace WinFormsApp
             {
                 if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Paciente)
                 {
+                    Admin.UsuarioGuardado = usuario;
+
                     this.Hide();
                     FrmPaciente frmPaciente = new FrmPaciente();
                     frmPaciente.ShowDialog();
                 }
                 else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Doctor)
                 {
+                    Admin.UsuarioGuardado = usuario;
+
+
                     this.Hide();
                     FrmDoctor frmDoctor = new FrmDoctor();
                     frmDoctor.ShowDialog();

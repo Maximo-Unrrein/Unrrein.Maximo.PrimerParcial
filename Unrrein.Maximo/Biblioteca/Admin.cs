@@ -9,12 +9,13 @@ namespace Biblioteca
     public class Admin
     {
         private static List<Usuario> listaUsuarios;
-        private static List<Doctor> listaDoctor;
+        private static Usuario usuarioGuardado;
+        
         
         static Admin()
         {
             Admin.ListaUsuarios = new List<Usuario>();
-            Admin.ListaDoctor = new List<Doctor>();
+            
 
         }
 
@@ -29,19 +30,28 @@ namespace Biblioteca
                 Admin.listaUsuarios = value;
             }
         } 
-        
-        public static List<Doctor> ListaDoctor
+
+        public static Usuario UsuarioGuardado
         {
             get
             {
-                return Admin.listaDoctor;
+                return Admin.usuarioGuardado;
             }
             set
             {
-                Admin.listaDoctor = value;
+                if(value is Usuario)
+                {
+                    Admin.usuarioGuardado = value;
+                }
             }
         }
-
+        
+        
+        /// <summary>
+        /// ////////////////////////
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <returns></returns>
 
         public static bool BuscarPersona(Usuario usuario)
         {
@@ -55,16 +65,6 @@ namespace Biblioteca
             return false;
         }
         
-        public static bool BuscarPersona(Doctor doctor)
-        {
-            foreach (Doctor dComparison in Admin.ListaDoctor)
-            {
-                if (doctor == dComparison)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+        
     }
 }
