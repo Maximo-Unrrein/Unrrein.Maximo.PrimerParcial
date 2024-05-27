@@ -16,6 +16,15 @@ namespace Biblioteca
         private string especialidad;
 
         //Constructor
+        public Doctor(string nombre, string apellido, int dni, char genero,  string especialidad) : base(nombre, apellido, dni, genero)
+        {
+            this.especialidad = especialidad;
+
+            this.listaPacientes = new List<Paciente> { };
+            this.turno = null;
+            this.horariosAtencion = null;
+            this.dias = null;
+        }
         public Doctor(string nombre, string apellido, int dni, char genero, List<Paciente> listaPacientes, int[] horarioAtencion, List<int> dias, string turno, string especialidad) : base(nombre, apellido, dni, genero)
         {
             this.listaPacientes = listaPacientes;

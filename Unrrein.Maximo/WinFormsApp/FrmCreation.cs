@@ -43,18 +43,27 @@ namespace WinFormsApp
 
             try
             {
-                Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
-                Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now);
+                if(txtBoxContraseña.Text == txtBoxConfirmarContraseña.Text)
+                {
+                    Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
+                    Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now);
 
-                Admin.ListaUsuarios.Add(usuarioNuevo);
-                SerializadorJson.Serializacion(Admin.ListaUsuarios, "ListaUsuarios.json");
-            } 
-            //catch (FormatException ex)
-            //{
-            //    validaciones = false;
-            //    throw new DniInvalidoException("Dni Invalido");
+                    Admin.ListaUsuarios.Add(usuarioNuevo);
+                    SerializadorJson.Serializacion(Admin.ListaUsuarios, "ListaUsuarios.json");
 
-            //}
+                }
+                else
+                {
+                    throw new ContraseñaInvalidaException("Error con la contraseña");
+                }
+            }
+            catch (ContraseñaInvalidaException ex)
+            {
+                validaciones = false;
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
             catch (Exception ex)
             {
                 validaciones = false;

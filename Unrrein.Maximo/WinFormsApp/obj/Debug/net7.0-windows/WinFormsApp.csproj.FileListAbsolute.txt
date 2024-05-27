@@ -22,3 +22,5 @@ W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\bin\Debug\net7.0-windows\Biblioteca.pdb
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.csproj.AssemblyReference.cache
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.csproj.CopyComplete
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.FrmRecuperacionContraseña.resources
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\WinFormsApp\obj\Debug\net7.0-windows\WinFormsApp.Properties.Resources.resources

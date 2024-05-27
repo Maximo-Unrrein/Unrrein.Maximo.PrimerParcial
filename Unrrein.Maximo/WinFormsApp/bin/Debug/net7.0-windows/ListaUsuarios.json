@@ -8,72 +8,28 @@
     },
     "NombreUsuario": "JOse",
     "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:51:11.3513386-03:00"
+    "HorarioIngreso": "2024-05-26T22:06:30.8885624-03:00"
   },
   {
     "Persona": {
-      "Nombre": "Blastois",
-      "Apellido": "Casasola",
-      "DNI": 44222333,
-      "Genero": "M"
-    },
-    "NombreUsuario": "JOse",
-    "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:51:31.7757264-03:00"
-  },
-  {
-    "Persona": {
-      "Nombre": "Blastois",
-      "Apellido": "Casasola",
-      "DNI": 44222333,
-      "Genero": "M"
-    },
-    "NombreUsuario": "JOse",
-    "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:51:51.8303705-03:00"
-  },
-  {
-    "Persona": {
-      "Nombre": "Blastois",
-      "Apellido": "Casasola",
-      "DNI": 44222333,
-      "Genero": "M"
-    },
-    "NombreUsuario": "JOse",
-    "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:51:55.8554602-03:00"
-  },
-  {
-    "Persona": {
-      "Nombre": "Blastois",
-      "Apellido": "Casasola",
-      "DNI": 44222333,
-      "Genero": "M"
-    },
-    "NombreUsuario": "JOse",
-    "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:51:58.2380929-03:00"
-  },
-  {
-    "Persona": {
-      "Nombre": "Blastois",
-      "Apellido": "Casasola",
-      "DNI": 44222333,
-      "Genero": "M"
-    },
-    "NombreUsuario": "JOse",
-    "Contrase\u00F1aUsuario": "Luis",
-    "HorarioIngreso": "2024-05-26T18:52:47.1995553-03:00"
-  },
-  {
-    "Persona": {
-      "Nombre": "Locolazo",
-      "Apellido": "Amoroso",
+      "Nombre": "Dexter",
+      "Apellido": "Doctor",
       "DNI": 12345678,
       "Genero": "M"
     },
-    "NombreUsuario": "Loco",
-    "Contrase\u00F1aUsuario": "DeAmor",
-    "HorarioIngreso": "2024-05-26T18:53:45.403539-03:00"
+    "NombreUsuario": "Dexter",
+    "Contrase\u00F1aUsuario": "Luis",
+    "HorarioIngreso": "2024-05-26T22:06:30.8862714-03:00"
+  },
+  {
+    "Persona": {
+      "Nombre": "Lolsito",
+      "Apellido": "Lolsito",
+      "DNI": 12334567,
+      "Genero": "F"
+    },
+    "NombreUsuario": "Lolsito",
+    "Contrase\u00F1aUsuario": "Lolsito",
+    "HorarioIngreso": "2024-05-26T22:06:50.408962-03:00"
   }
 ]

@@ -29,11 +29,17 @@ namespace WinFormsApp
         {
             foreach (Usuario usuario in Admin.ListaUsuarios)
             {
-                if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario)
+                if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Paciente)
                 {
                     this.Hide();
                     FrmPaciente frmPaciente = new FrmPaciente();
                     frmPaciente.ShowDialog();
+                }
+                else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Doctor)
+                {
+                    this.Hide();
+                    FrmDoctor frmDoctor = new FrmDoctor();
+                    frmDoctor.ShowDialog();
                 }
                 else
                 {
@@ -47,9 +53,10 @@ namespace WinFormsApp
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void lnkLableRecuperacionContraseña_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            FrmRecuperacionContraseña frmRecuperacionContraseña = new FrmRecuperacionContraseña();
+            frmRecuperacionContraseña.ShowDialog();
         }
     }
 }

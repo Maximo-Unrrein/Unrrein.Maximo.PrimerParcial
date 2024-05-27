@@ -30,10 +30,10 @@
         {
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            comboBox1 = new ComboBox();
-            listBox1 = new ListBox();
+            btnBack = new Button();
+            btnMostrarDatosPaciente = new Button();
+            cmbBoxPaciente = new ComboBox();
+            lstBoxDatos = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -56,41 +56,42 @@
             label2.TabIndex = 1;
             label2.Text = "Datos:";
             // 
-            // button1
+            // btnBack
             // 
-            button1.Location = new Point(12, 426);
-            button1.Name = "button1";
-            button1.Size = new Size(31, 23);
-            button1.TabIndex = 2;
-            button1.Text = "<";
-            button1.UseVisualStyleBackColor = true;
+            btnBack.Location = new Point(12, 426);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(23, 23);
+            btnBack.TabIndex = 2;
+            btnBack.Text = "<";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
-            // button2
+            // btnMostrarDatosPaciente
             // 
-            button2.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(152, 298);
-            button2.Name = "button2";
-            button2.Size = new Size(173, 93);
-            button2.TabIndex = 3;
-            button2.Text = "Mostrar Datos del paciente";
-            button2.UseVisualStyleBackColor = true;
+            btnMostrarDatosPaciente.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMostrarDatosPaciente.Location = new Point(152, 298);
+            btnMostrarDatosPaciente.Name = "btnMostrarDatosPaciente";
+            btnMostrarDatosPaciente.Size = new Size(173, 93);
+            btnMostrarDatosPaciente.TabIndex = 3;
+            btnMostrarDatosPaciente.Text = "Mostrar Datos del paciente";
+            btnMostrarDatosPaciente.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbBoxPaciente
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(152, 133);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(173, 23);
-            comboBox1.TabIndex = 4;
+            cmbBoxPaciente.FormattingEnabled = true;
+            cmbBoxPaciente.Location = new Point(152, 133);
+            cmbBoxPaciente.Name = "cmbBoxPaciente";
+            cmbBoxPaciente.Size = new Size(173, 23);
+            cmbBoxPaciente.TabIndex = 4;
             // 
-            // listBox1
+            // lstBoxDatos
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(435, 72);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(352, 319);
-            listBox1.TabIndex = 5;
+            lstBoxDatos.FormattingEnabled = true;
+            lstBoxDatos.ItemHeight = 15;
+            lstBoxDatos.Location = new Point(435, 72);
+            lstBoxDatos.Name = "lstBoxDatos";
+            lstBoxDatos.Size = new Size(352, 319);
+            lstBoxDatos.TabIndex = 5;
             // 
             // FrmDoctor
             // 
@@ -98,10 +99,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
-            Controls.Add(listBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(lstBoxDatos);
+            Controls.Add(cmbBoxPaciente);
+            Controls.Add(btnMostrarDatosPaciente);
+            Controls.Add(btnBack);
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("SimSun", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -120,9 +121,9 @@
 
         private Label label1;
         private Label label2;
-        private Button button1;
-        private Button button2;
-        private ComboBox comboBox1;
-        private ListBox listBox1;
+        private Button btnBack;
+        private Button btnMostrarDatosPaciente;
+        private ComboBox cmbBoxPaciente;
+        private ListBox lstBoxDatos;
     }
 }

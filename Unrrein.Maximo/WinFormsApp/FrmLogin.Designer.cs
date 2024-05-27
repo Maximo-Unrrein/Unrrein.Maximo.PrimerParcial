@@ -34,7 +34,7 @@
             txtBoxUsuario = new TextBox();
             txtBoxContraseña = new TextBox();
             btnIngresar = new Button();
-            linkLabel1 = new LinkLabel();
+            lnkLableRecuperacionContraseña = new LinkLabel();
             lblConfirmacion = new Label();
             SuspendLayout();
             // 
@@ -98,24 +98,24 @@
             btnIngresar.UseWaitCursor = true;
             btnIngresar.Click += btnIngresar_Click;
             // 
-            // linkLabel1
+            // lnkLableRecuperacionContraseña
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = SystemColors.Highlight;
-            linkLabel1.Location = new Point(223, 287);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(403, 15);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "¿No recuerdas tu contraseña? Haga click aquí";
-            linkLabel1.UseWaitCursor = true;
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            lnkLableRecuperacionContraseña.AutoSize = true;
+            lnkLableRecuperacionContraseña.LinkColor = SystemColors.Highlight;
+            lnkLableRecuperacionContraseña.Location = new Point(223, 287);
+            lnkLableRecuperacionContraseña.Name = "lnkLableRecuperacionContraseña";
+            lnkLableRecuperacionContraseña.Size = new Size(403, 15);
+            lnkLableRecuperacionContraseña.TabIndex = 6;
+            lnkLableRecuperacionContraseña.TabStop = true;
+            lnkLableRecuperacionContraseña.Text = "¿No recuerdas tu contraseña? Haga click aquí";
+            lnkLableRecuperacionContraseña.UseWaitCursor = true;
+            lnkLableRecuperacionContraseña.LinkClicked += lnkLableRecuperacionContraseña_LinkClicked;
             // 
             // lblConfirmacion
             // 
             lblConfirmacion.AutoSize = true;
             lblConfirmacion.ForeColor = Color.Firebrick;
-            lblConfirmacion.Location = new Point(283, 373);
+            lblConfirmacion.Location = new Point(176, 373);
             lblConfirmacion.Name = "lblConfirmacion";
             lblConfirmacion.Size = new Size(0, 15);
             lblConfirmacion.TabIndex = 7;
@@ -127,7 +127,7 @@
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
             Controls.Add(lblConfirmacion);
-            Controls.Add(linkLabel1);
+            Controls.Add(lnkLableRecuperacionContraseña);
             Controls.Add(btnIngresar);
             Controls.Add(txtBoxContraseña);
             Controls.Add(txtBoxUsuario);
@@ -154,7 +154,7 @@
         private TextBox txtBoxUsuario;
         private TextBox txtBoxContraseña;
         private Button btnIngresar;
-        private LinkLabel linkLabel1;
+        private LinkLabel lnkLableRecuperacionContraseña;
         private Label lblConfirmacion;
     }
 }

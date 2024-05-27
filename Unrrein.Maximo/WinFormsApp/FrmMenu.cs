@@ -7,13 +7,16 @@ namespace WinFormsApp
         public FrmMenu()
         {
             InitializeComponent();
+            Doctor doctor = new Doctor("Dexter", "Doctor", 12345678, 'M', "psicologo");
+            Usuario usuarioDoctor = new Usuario(doctor, "Dexter", "Luis", DateTime.Now);
 
 
             // PRUEBA !!!!!!!!!!!!!!!!!!!!!!
             Paciente paciente = new Paciente("Blastois", "Casasola", 44222333, 'M', "Fractura");
-            Usuario usuarioNuevo = new Usuario(paciente, "JOse", "Luis", DateTime.Now);
+            Usuario usuarioPaciente = new Usuario(paciente, "JOse", "Luis", DateTime.Now);
 
-            Admin.ListaUsuarios.Add(usuarioNuevo);
+            Admin.ListaUsuarios.Add(usuarioPaciente);
+            Admin.ListaUsuarios.Add(usuarioDoctor);
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

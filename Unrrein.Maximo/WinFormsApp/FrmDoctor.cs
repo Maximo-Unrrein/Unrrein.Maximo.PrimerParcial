@@ -16,5 +16,12 @@ namespace WinFormsApp
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.ShowDialog();
+        }
     }
 }
