@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,12 @@ namespace WinFormsApp
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            foreach (Usuario usuario in Admin.ListaUsuarios)
+
+            List<Usuario> listaUsuariosRetornada = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
+
+            foreach (Usuario usuario in listaUsuariosRetornada)
             {
-                if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Paciente)
+                if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Paciente is not null)
                 {
                     Admin.UsuarioGuardado = usuario;
 
@@ -37,10 +41,9 @@ namespace WinFormsApp
                     FrmPaciente frmPaciente = new FrmPaciente();
                     frmPaciente.ShowDialog();
                 }
-                else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Doctor)
+                else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Doctor is not null)
                 {
                     Admin.UsuarioGuardado = usuario;
-
 
                     this.Hide();
                     FrmDoctor frmDoctor = new FrmDoctor();
@@ -51,6 +54,31 @@ namespace WinFormsApp
                     lblConfirmacion.Text = "No existe usuario con Nombre/Contraseña similares";
                 }
             }
+
+            //foreach (Usuario usuario in Admin.ListaUsuarios)
+            //{
+            //    if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Paciente)
+            //    {
+            //        Admin.UsuarioGuardado = usuario;
+
+            //        this.Hide();
+            //        FrmPaciente frmPaciente = new FrmPaciente();
+            //        frmPaciente.ShowDialog();
+            //    }
+            //    else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Doctor)
+            //    {
+            //        Admin.UsuarioGuardado = usuario;
+
+
+            //        this.Hide();
+            //        FrmDoctor frmDoctor = new FrmDoctor();
+            //        frmDoctor.ShowDialog();
+            //    }
+            //    else
+            //    {
+            //        lblConfirmacion.Text = "No existe usuario con Nombre/Contraseña similares";
+            //    }
+            //}
 
 
 

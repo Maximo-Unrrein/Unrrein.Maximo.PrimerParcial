@@ -36,6 +36,8 @@
             btnConfirmar = new Button();
             btnCancelar = new Button();
             lblConfirmacion = new Label();
+            lblMail = new Label();
+            txtBoxMail = new TextBox();
             SuspendLayout();
             // 
             // lblTitulo
@@ -52,7 +54,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUsuario.Location = new Point(12, 57);
+            lblUsuario.Location = new Point(12, 106);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(63, 15);
             lblUsuario.TabIndex = 1;
@@ -62,7 +64,7 @@
             // 
             lblNuevaContraseña.AutoSize = true;
             lblNuevaContraseña.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblNuevaContraseña.Location = new Point(12, 127);
+            lblNuevaContraseña.Location = new Point(12, 155);
             lblNuevaContraseña.Name = "lblNuevaContraseña";
             lblNuevaContraseña.Size = new Size(135, 15);
             lblNuevaContraseña.TabIndex = 2;
@@ -70,21 +72,21 @@
             // 
             // txtBoxUsuario
             // 
-            txtBoxUsuario.Location = new Point(12, 75);
+            txtBoxUsuario.Location = new Point(12, 124);
             txtBoxUsuario.Name = "txtBoxUsuario";
             txtBoxUsuario.Size = new Size(191, 23);
             txtBoxUsuario.TabIndex = 3;
             // 
             // txtBoxContraseña
             // 
-            txtBoxContraseña.Location = new Point(12, 145);
+            txtBoxContraseña.Location = new Point(12, 173);
             txtBoxContraseña.Name = "txtBoxContraseña";
             txtBoxContraseña.Size = new Size(191, 23);
             txtBoxContraseña.TabIndex = 4;
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new Point(12, 203);
+            btnConfirmar.Location = new Point(12, 230);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(191, 23);
             btnConfirmar.TabIndex = 5;
@@ -96,7 +98,7 @@
             // 
             btnCancelar.BackColor = Color.IndianRed;
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(64, 236);
+            btnCancelar.Location = new Point(64, 263);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(88, 23);
             btnCancelar.TabIndex = 6;
@@ -113,12 +115,31 @@
             lblConfirmacion.Size = new Size(0, 15);
             lblConfirmacion.TabIndex = 7;
             // 
+            // lblMail
+            // 
+            lblMail.AutoSize = true;
+            lblMail.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMail.Location = new Point(12, 48);
+            lblMail.Name = "lblMail";
+            lblMail.Size = new Size(39, 15);
+            lblMail.TabIndex = 8;
+            lblMail.Text = "Mail";
+            // 
+            // txtBoxMail
+            // 
+            txtBoxMail.Location = new Point(12, 70);
+            txtBoxMail.Name = "txtBoxMail";
+            txtBoxMail.Size = new Size(191, 23);
+            txtBoxMail.TabIndex = 9;
+            // 
             // FrmRecuperacionContraseña
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightGray;
-            ClientSize = new Size(231, 271);
+            ClientSize = new Size(231, 296);
+            Controls.Add(txtBoxMail);
+            Controls.Add(lblMail);
             Controls.Add(lblConfirmacion);
             Controls.Add(btnCancelar);
             Controls.Add(btnConfirmar);
@@ -147,5 +168,7 @@
         private Button btnConfirmar;
         private Button btnCancelar;
         private Label lblConfirmacion;
+        private Label lblMail;
+        private TextBox txtBoxMail;
     }
 }

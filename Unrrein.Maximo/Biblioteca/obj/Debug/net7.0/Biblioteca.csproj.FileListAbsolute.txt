@@ -1,3 +1,4 @@
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\Biblioteca\bin\Debug\net7.0\data.json
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\Biblioteca\bin\Debug\net7.0\Biblioteca.deps.json
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\Biblioteca\bin\Debug\net7.0\Biblioteca.dll
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\Biblioteca\bin\Debug\net7.0\Biblioteca.pdb

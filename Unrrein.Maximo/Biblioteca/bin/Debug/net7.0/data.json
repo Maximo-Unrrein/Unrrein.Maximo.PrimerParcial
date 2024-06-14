@@ -1,0 +1,73 @@
+[
+  {
+    "Paciente": {
+      "Turno": null,
+      "Enfermedad": "Peditis",
+      "Nombre": "Pdr",
+      "Apellido": "Puig",
+      "DNI": 29121234,
+      "Genero": "F"
+    },
+    "Doctor": null,
+    "NombreUsuario": "PDrr",
+    "Contrase\u00F1aUsuario": "JDJDJ",
+    "HorarioIngreso": "2024-06-12T16:25:15.2669993-03:00",
+    "Mail": "pdr@gmail.com"
+  },
+  {
+    "Paciente": null,
+    "Doctor": {
+      "ListaPacientes": [
+        {
+          "Turno": null,
+          "Enfermedad": "Peditis",
+          "Nombre": "Pdr",
+          "Apellido": "Puig",
+          "DNI": 29121234,
+          "Genero": "F"
+        }
+      ],
+      "HorariosAtencion": 0,
+      "Especialidad": 1,
+      "Nombre": "TTTT",
+      "Apellido": "pedriot",
+      "DNI": 12345578,
+      "Genero": "F"
+    },
+    "NombreUsuario": "TTttT",
+    "Contrase\u00F1aUsuario": "fjfjjd",
+    "HorarioIngreso": "2024-06-12T16:25:15.2714071-03:00",
+    "Mail": "TTT@hotmail.com"
+  },
+  {
+    "Paciente": null,
+    "Doctor": {
+      "ListaPacientes": [],
+      "HorariosAtencion": 0,
+      "Especialidad": 1,
+      "Nombre": "AAA",
+      "Apellido": "pedriot",
+      "DNI": 12344478,
+      "Genero": "F"
+    },
+    "NombreUsuario": "AaaaaA",
+    "Contrase\u00F1aUsuario": "hhghh",
+    "HorarioIngreso": "2024-06-12T16:25:15.271502-03:00",
+    "Mail": "pedriot@gmail.com"
+  },
+  {
+    "Paciente": {
+      "Turno": null,
+      "Enfermedad": null,
+      "Nombre": "Pedron",
+      "Apellido": "Riquelme",
+      "DNI": 45226034,
+      "Genero": "M"
+    },
+    "Doctor": null,
+    "NombreUsuario": "Pedro",
+    "Contrase\u00F1aUsuario": "Pedro",
+    "HorarioIngreso": "2024-06-14T12:14:48.5142689-03:00",
+    "Mail": "Pedro@gmail.com"
+  }
+]

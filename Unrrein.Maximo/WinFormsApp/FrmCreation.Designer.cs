@@ -35,7 +35,7 @@
             label5 = new Label();
             txtBoxUsuario = new TextBox();
             txtBoxContraseña = new TextBox();
-            txtBoxConfirmarContraseña = new TextBox();
+            txtBoxMail = new TextBox();
             btnBack = new Button();
             btnCrearUsuario = new Button();
             grpBoxDatosPersona = new GroupBox();
@@ -95,9 +95,9 @@
             label5.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.Location = new Point(118, 235);
             label5.Name = "label5";
-            label5.Size = new Size(167, 15);
+            label5.Size = new Size(39, 15);
             label5.TabIndex = 4;
-            label5.Text = "Confirmar Contraseña";
+            label5.Text = "Mail";
             // 
             // txtBoxUsuario
             // 
@@ -110,15 +110,16 @@
             // 
             txtBoxContraseña.Location = new Point(118, 187);
             txtBoxContraseña.Name = "txtBoxContraseña";
+            txtBoxContraseña.PasswordChar = '*';
             txtBoxContraseña.Size = new Size(212, 25);
             txtBoxContraseña.TabIndex = 6;
             // 
-            // txtBoxConfirmarContraseña
+            // txtBoxMail
             // 
-            txtBoxConfirmarContraseña.Location = new Point(118, 253);
-            txtBoxConfirmarContraseña.Name = "txtBoxConfirmarContraseña";
-            txtBoxConfirmarContraseña.Size = new Size(212, 25);
-            txtBoxConfirmarContraseña.TabIndex = 7;
+            txtBoxMail.Location = new Point(118, 253);
+            txtBoxMail.Name = "txtBoxMail";
+            txtBoxMail.Size = new Size(212, 25);
+            txtBoxMail.TabIndex = 7;
             // 
             // btnBack
             // 
@@ -245,7 +246,7 @@
             Controls.Add(grpBoxDatosPersona);
             Controls.Add(btnCrearUsuario);
             Controls.Add(btnBack);
-            Controls.Add(txtBoxConfirmarContraseña);
+            Controls.Add(txtBoxMail);
             Controls.Add(txtBoxContraseña);
             Controls.Add(txtBoxUsuario);
             Controls.Add(label5);
@@ -276,7 +277,7 @@
         private Label label5;
         private TextBox txtBoxUsuario;
         private TextBox txtBoxContraseña;
-        private TextBox txtBoxConfirmarContraseña;
+        private TextBox txtBoxMail;
         private Button btnBack;
         private Button btnCrearUsuario;
         private GroupBox grpBoxDatosPersona;

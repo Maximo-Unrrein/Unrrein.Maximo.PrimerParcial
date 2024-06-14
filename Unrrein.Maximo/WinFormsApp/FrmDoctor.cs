@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace WinFormsApp
 {
     public partial class FrmDoctor : Form
     {
-        Doctor doctor = (Doctor)Admin.UsuarioGuardado.Persona;
+        //Doctor doctor = (Doctor)Admin.UsuarioGuardado.Persona;  ---------------------- CUALQUIERA
 
         public FrmDoctor()
         {
@@ -22,9 +23,11 @@ namespace WinFormsApp
 
 
 
-            cmbBoxPacientes.DataSource = doctor.ListaPacientes;
+            //cmbBoxPacientes.DataSource = doctor.ListaPacientes;
+           
+            
             // Establecer las propiedades DisplayMember y ValueMember si es necesario
-            cmbBoxPacientes.DisplayMember = "Nombre"; // Propiedad a mostrar
+            //cmbBoxPacientes.DisplayMember = "Nombre"; // Propiedad a mostrar
 
         }
 
@@ -41,19 +44,19 @@ namespace WinFormsApp
             // Limpiar el ListBox antes de mostrar los datos
             lstBoxDatos.Items.Clear();
 
-            foreach (Paciente paciente in doctor.ListaPacientes)
-            {
-                if(cmbBoxPacientes.Text == paciente.Nombre)
-                {
+            //foreach (Paciente paciente in doctor.ListaPacientes)
+            //{
+            //    if(cmbBoxPacientes.Text == paciente.Nombre)
+            //    {
 
-                    lstBoxDatos.Items.Add("Nombre: " + paciente.Nombre);
-                    lstBoxDatos.Items.Add("Apellido: " + paciente.Apellido);
-                    lstBoxDatos.Items.Add("DNI: " + paciente.DNI);
-                    lstBoxDatos.Items.Add("Genero: " + paciente.Genero);
-                    lstBoxDatos.Items.Add("Enfermedad: " + paciente.Enfermedad);
+            //        lstBoxDatos.Items.Add("Nombre: " + paciente.Nombre);
+            //        lstBoxDatos.Items.Add("Apellido: " + paciente.Apellido);
+            //        lstBoxDatos.Items.Add("DNI: " + paciente.DNI);
+            //        lstBoxDatos.Items.Add("Genero: " + paciente.Genero);
+            //        lstBoxDatos.Items.Add("Enfermedad: " + paciente.Enfermedad);
 
-                }
-            }
+            //    }
+            //}
         }
     }
 }

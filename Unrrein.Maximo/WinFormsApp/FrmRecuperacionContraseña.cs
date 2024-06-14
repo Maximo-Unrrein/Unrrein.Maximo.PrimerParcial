@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

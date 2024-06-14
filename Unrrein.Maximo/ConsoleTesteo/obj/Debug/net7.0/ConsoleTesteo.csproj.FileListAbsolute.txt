@@ -16,3 +16,4 @@ W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\ConsoleTesteo\obj\Debug\net7.0\ConsoleTesteo.pdb
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\ConsoleTesteo\obj\Debug\net7.0\ConsoleTesteo.genruntimeconfig.cache
 W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\ConsoleTesteo\obj\Debug\net7.0\ref\ConsoleTesteo.dll
+W:\PROGRAMACION\CSharp\2024\1° Parcial Lab II - 322°A - 1°Cuat. 2024\Unrrein.Maximo.PrimerParcial\Unrrein.Maximo\ConsoleTesteo\bin\Debug\net7.0\data.json

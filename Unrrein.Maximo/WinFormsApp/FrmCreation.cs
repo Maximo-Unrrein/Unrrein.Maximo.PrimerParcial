@@ -1,4 +1,5 @@
 ﻿using Biblioteca;
+using Biblioteca.clases;
 using Biblioteca.excepciones;
 using System;
 using System.Collections.Generic;
@@ -42,26 +43,15 @@ namespace WinFormsApp
 
 
             try
-            {
-                if(txtBoxContraseña.Text == txtBoxConfirmarContraseña.Text)
-                {
-                    Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
-                    Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now);
+            {  
+                Admin.ListaUsuarios = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
 
-                    Admin.ListaUsuarios.Add(usuarioNuevo);
-                    SerializadorJson.Serializacion(Admin.ListaUsuarios, "ListaUsuarios.json");
 
-                }
-                else
-                {
-                    throw new ContraseñaInvalidaException("Error con la contraseña");
-                }
-            }
-            catch (ContraseñaInvalidaException ex)
-            {
-                validaciones = false;
-                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
+                Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now, txtBoxMail.Text);
 
+                Admin.ListaUsuarios.Add(usuarioNuevo);
+                ManejadorJson.Serializacion(Admin.ListaUsuarios, Admin.RutaCompleta);
 
             }
             catch (Exception ex)
@@ -90,7 +80,7 @@ namespace WinFormsApp
 
                 txtBoxUsuario.Text = string.Empty;
                 txtBoxContraseña.Text = string.Empty;
-                txtBoxConfirmarContraseña.Text = string.Empty;
+                txtBoxMail.Text = string.Empty;
             }
             else
             {
