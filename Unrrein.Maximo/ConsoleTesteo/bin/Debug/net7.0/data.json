@@ -2,40 +2,33 @@
   {
     "Paciente": {
       "Turno": null,
-      "Enfermedad": "matematica",
-      "Nombre": "Pdr",
-      "Apellido": "Puig",
+      "Nombre": "Luis",
+      "Apellido": "Juez",
       "DNI": 29121234,
       "Genero": "F"
     },
     "Doctor": null,
-    "NombreUsuario": "PDrr",
-    "Contrase\u00F1aUsuario": "JDJDJ",
-    "HorarioIngreso": "2024-06-11T12:33:42.6276023-03:00"
+    "NombreUsuario": "Luisito",
+    "Contrase\u00F1aUsuario": "Luisito",
+    "HorarioIngreso": "2024-06-18T16:54:35.3485877-03:00",
+    "Mail": "Luisito@gmail.com"
   },
   {
-    "Paciente": null,
-    "Doctor": {
-      "ListaPacientes": [
-        {
-          "Turno": null,
-          "Enfermedad": "matematica",
-          "Nombre": "Pdr",
-          "Apellido": "Puig",
-          "DNI": 29121234,
-          "Genero": "F"
-        }
-      ],
-      "HorariosAtencion": 0,
-      "Especialidad": 1,
-      "Nombre": "TTTT",
-      "Apellido": "pedriot",
-      "DNI": 12345578,
-      "Genero": "F"
+    "Paciente": {
+      "Turno": {
+        "Dia": "2024-06-18T00:00:00-03:00",
+        "Horario": "6:00"
+      },
+      "Nombre": "Max",
+      "Apellido": "Unrrein",
+      "DNI": 45226034,
+      "Genero": "M"
     },
-    "NombreUsuario": "TTttT",
-    "Contrase\u00F1aUsuario": "fjfjjd",
-    "HorarioIngreso": "2024-06-11T12:33:42.6311246-03:00"
+    "Doctor": null,
+    "NombreUsuario": "Max",
+    "Contrase\u00F1aUsuario": "Max",
+    "HorarioIngreso": "2024-06-18T16:54:35.3522427-03:00",
+    "Mail": "MaxUnrrein@gmail.com"
   },
   {
     "Paciente": null,
@@ -43,13 +36,49 @@
       "ListaPacientes": [],
       "HorariosAtencion": 0,
       "Especialidad": 1,
-      "Nombre": "AAA",
-      "Apellido": "pedriot",
+      "HorariosDisponibles": [
+        "7:00",
+        "8:00",
+        "9:00",
+        "10:00",
+        "11:00",
+        "12:00"
+      ],
+      "NombreCompleto": "Doctor Pinochet",
+      "Nombre": "Doctor",
+      "Apellido": "Pinochet",
+      "DNI": 12345578,
+      "Genero": "F"
+    },
+    "NombreUsuario": "Pinochet",
+    "Contrase\u00F1aUsuario": "Pinochet",
+    "HorarioIngreso": "2024-06-18T16:54:35.3527795-03:00",
+    "Mail": "Pinochet@hotmail.com"
+  },
+  {
+    "Paciente": null,
+    "Doctor": {
+      "ListaPacientes": [],
+      "HorariosAtencion": 1,
+      "Especialidad": 1,
+      "HorariosDisponibles": [
+        "13:00",
+        "14:00",
+        "15:00",
+        "16:00",
+        "17:00",
+        "18:00",
+        "19:00"
+      ],
+      "NombreCompleto": "Doctor River",
+      "Nombre": "Doctor",
+      "Apellido": "River",
       "DNI": 12344478,
       "Genero": "F"
     },
-    "NombreUsuario": "AaaaaA",
-    "Contrase\u00F1aUsuario": "hhghh",
-    "HorarioIngreso": "2024-06-11T12:33:42.6312501-03:00"
+    "NombreUsuario": "River",
+    "Contrase\u00F1aUsuario": "River",
+    "HorarioIngreso": "2024-06-18T16:54:35.3528812-03:00",
+    "Mail": "River@gmail.com"
   }
 ]

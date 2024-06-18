@@ -14,7 +14,6 @@ namespace Biblioteca
         #region Atributos
         //Atributos
         protected Turno turno;
-        protected string enfermedad;
         #endregion
 
 
@@ -25,18 +24,18 @@ namespace Biblioteca
         public Paciente(string nombre, string apellido, int dni, char genero, string enfermedad) : base(nombre, apellido, dni, genero)
         {
             this.Turno = null;
-            this.Enfermedad = enfermedad;
+            //this.Enfermedad = enfermedad;
         }
 
         public Paciente(string nombre, string apellido, int dni, char genero) : base(nombre, apellido, dni, genero)
         {
             this.Turno = null;
-            this.Enfermedad = null;
+            //this.Enfermedad = null;
         }
 
         //Propiedades
         public Turno Turno { get => this.turno; set => this.turno = value; }
-        public string Enfermedad { get => this.enfermedad; set => this.enfermedad = value; }
+        //public string Enfermedad { get => this.enfermedad; set => this.enfermedad = value; }
         
         
 
@@ -53,7 +52,7 @@ namespace Biblioteca
                 sb.AppendLine($"DNI: {base.DNI}");
                 sb.AppendLine($"Genero: {base.Genero}");
                 sb.AppendLine($"{this.Turno.Mostrar()}");
-                sb.AppendLine($"Enfermedad:{this.Enfermedad}");
+                //sb.AppendLine($"Enfermedad:{this.Enfermedad}");
             }
             else
             {
@@ -61,7 +60,7 @@ namespace Biblioteca
                 sb.AppendLine($"Apellido: {base.Apellido}");
                 sb.AppendLine($"DNI: {base.DNI}");
                 sb.AppendLine($"Genero: {base.Genero}");
-                sb.AppendLine($"Enfermedad:{this.Enfermedad}");
+                //sb.AppendLine($"Enfermedad:{this.Enfermedad}");
             }
 
 

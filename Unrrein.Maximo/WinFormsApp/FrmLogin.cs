@@ -40,6 +40,7 @@ namespace WinFormsApp
                     this.Hide();
                     FrmPaciente frmPaciente = new FrmPaciente();
                     frmPaciente.ShowDialog();
+
                 }
                 else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Doctor is not null)
                 {

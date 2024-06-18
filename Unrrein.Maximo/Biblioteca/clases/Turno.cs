@@ -12,24 +12,21 @@ namespace Biblioteca.clases
 
         private DateTime dia;
         private string horario;
-        private Doctor doctor;
+        
 
         public Turno() { }
-        public Turno(Doctor doctor, DateTime dia, string horario)
+        public Turno(DateTime dia, string horario)
         {
-            this.Doctor = doctor;
             this.Dia = dia;
             this.Horario = horario;
         }
 
-        public Doctor Doctor { get => doctor; set => doctor = value; }
-        public DateTime Dia { get => dia; set => dia = value; }
-        public string Horario { get => horario; set => horario = value; }
+        public DateTime Dia { get => this.dia; set => this.dia = value; }
+        public string Horario { get => this.horario; set => this.horario = value; }
 
         public string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Turno: {Doctor.Nombre} {Doctor.Apellido}");
             sb.AppendLine($"Día: {Dia.ToString("dd/MM/yyyy")}");
             sb.Append($"Hora: {Horario}");
             return sb.ToString();

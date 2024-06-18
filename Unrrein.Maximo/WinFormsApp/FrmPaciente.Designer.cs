@@ -39,8 +39,9 @@
             btnConfirmarTurno = new Button();
             label4 = new Label();
             label5 = new Label();
-            lstBoxDatosDelTurno = new ListBox();
-            label6 = new Label();
+            lblDatosDelTurno = new Label();
+            lblDatosTurno = new Label();
+            btnCancelar = new Button();
             SuspendLayout();
             // 
             // btnBack
@@ -78,6 +79,7 @@
             monthCalendar1.Location = new Point(376, 98);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 3;
+            monthCalendar1.DateSelected += monthCalendar1_DateSelected;
             // 
             // cmbBoxEspecialidad
             // 
@@ -95,6 +97,7 @@
             cmbBoxDoctor.Name = "cmbBoxDoctor";
             cmbBoxDoctor.Size = new Size(186, 23);
             cmbBoxDoctor.TabIndex = 5;
+            cmbBoxDoctor.SelectedIndexChanged += cmbBoxDoctor_SelectedIndexChanged;
             // 
             // cmbBoxHora
             // 
@@ -143,24 +146,35 @@
             label5.TabIndex = 10;
             label5.Text = "-------";
             // 
-            // lstBoxDatosDelTurno
+            // lblDatosDelTurno
             // 
-            lstBoxDatosDelTurno.FormattingEnabled = true;
-            lstBoxDatosDelTurno.ItemHeight = 15;
-            lstBoxDatosDelTurno.Location = new Point(129, 351);
-            lstBoxDatosDelTurno.Name = "lstBoxDatosDelTurno";
-            lstBoxDatosDelTurno.Size = new Size(495, 64);
-            lstBoxDatosDelTurno.TabIndex = 11;
+            lblDatosDelTurno.AutoSize = true;
+            lblDatosDelTurno.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDatosDelTurno.Location = new Point(129, 333);
+            lblDatosDelTurno.Name = "lblDatosDelTurno";
+            lblDatosDelTurno.Size = new Size(135, 15);
+            lblDatosDelTurno.TabIndex = 12;
+            lblDatosDelTurno.Text = "DATOS DEL TURNO:";
             // 
-            // label6
+            // lblDatosTurno
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(129, 333);
-            label6.Name = "label6";
-            label6.Size = new Size(127, 15);
-            label6.TabIndex = 12;
-            label6.Text = "Datos del Turno";
+            lblDatosTurno.AutoSize = true;
+            lblDatosTurno.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDatosTurno.Location = new Point(129, 358);
+            lblDatosTurno.Name = "lblDatosTurno";
+            lblDatosTurno.Size = new Size(0, 15);
+            lblDatosTurno.TabIndex = 13;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.IndianRed;
+            btnCancelar.Location = new Point(522, 426);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(102, 23);
+            btnCancelar.TabIndex = 14;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FrmPaciente
             // 
@@ -168,8 +182,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(761, 461);
-            Controls.Add(label6);
-            Controls.Add(lstBoxDatosDelTurno);
+            Controls.Add(btnCancelar);
+            Controls.Add(lblDatosTurno);
+            Controls.Add(lblDatosDelTurno);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(btnConfirmarTurno);
@@ -207,6 +222,8 @@
         private Label label4;
         private Label label5;
         private ListBox lstBoxDatosDelTurno;
-        private Label label6;
+        private Label lblDatosDelTurno;
+        private Label lblDatosTurno;
+        private Button btnCancelar;
     }
 }

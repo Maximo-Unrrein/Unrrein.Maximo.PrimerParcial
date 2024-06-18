@@ -24,26 +24,31 @@ namespace ConsoleTesteo
 
             /// USUARIOS
 
-            Paciente paciente = new Paciente("Pdr", "Puig", 29121234, 'F', "Peditis");
-            Usuario usuario = new Usuario(paciente, "PDrr", "JDJDJ", DateTime.Now, "pdr@gmail.com");
+            Paciente paciente = new Paciente("Luis", "Juez", 29121234, 'F', "Peditis");
+            Usuario usuario = new Usuario(paciente, "Luisito", "Luisito", DateTime.Now, "Luisito@gmail.com");
 
-            Doctor doctor2 = new Doctor("TTTT", "pedriot", 12345578, 'F', RangoHorario.Mañana, Especialidades.Cardiologia);
-            Usuario usuario2 = new Usuario(doctor2, "TTttT", "fjfjjd", DateTime.Now, "TTT@hotmail.com");
+            Paciente paciente01 = new Paciente("Max", "Unrrein", 45226034, 'M', "Huevos revueltos");
+            Usuario usuario01 = new Usuario(paciente01, "Max", "Max", DateTime.Now, "MaxUnrrein@gmail.com");
+
+
+            Doctor doctor2 = new Doctor("Doctor", "Pinochet", 12345578, 'F', RangoHorario.Mañana, Especialidades.Cardiologia);
+            Usuario usuario2 = new Usuario(doctor2, "Pinochet", "Pinochet", DateTime.Now, "Pinochet@hotmail.com");
 
 
 
-            Doctor doctor3 = new Doctor("AAA", "pedriot", 12344478, 'F', RangoHorario.Mañana, Especialidades.Cardiologia);
-            Usuario usuario3 = new Usuario(doctor3, "AaaaaA", "hhghh", DateTime.Now, "pedriot@gmail.com");
+            Doctor doctor3 = new Doctor("Doctor", "River", 12344478, 'F', RangoHorario.Tarde, Especialidades.Cardiologia);
+            Usuario usuario3 = new Usuario(doctor3, "River", "River", DateTime.Now, "River@gmail.com");
 
 
 
             List<Usuario> listaDeUsuarios = new List<Usuario>();
             listaDeUsuarios.Add(usuario);
+            listaDeUsuarios.Add(usuario01);
             listaDeUsuarios.Add(usuario2);
             listaDeUsuarios.Add(usuario3);
 
 
-            bool caca = doctor2 + paciente;
+            
             
             
             
