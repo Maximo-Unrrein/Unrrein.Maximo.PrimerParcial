@@ -24,9 +24,10 @@ namespace Biblioteca.clases
         public DateTime Dia { get => this.dia; set => this.dia = value; }
         public string Horario { get => this.horario; set => this.horario = value; }
 
-        public string Mostrar()
+        public string ToString()
         {
             StringBuilder sb = new StringBuilder();
+            sb.Append("TURNO:");
             sb.AppendLine($"Día: {Dia.ToString("dd/MM/yyyy")}");
             sb.Append($"Hora: {Horario}");
             return sb.ToString();

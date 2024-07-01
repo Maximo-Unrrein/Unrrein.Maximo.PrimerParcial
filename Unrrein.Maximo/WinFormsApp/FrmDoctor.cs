@@ -23,11 +23,18 @@ namespace WinFormsApp
 
 
 
-            //cmbBoxPacientes.DataSource = doctor.ListaPacientes;
-           
-            
-            // Establecer las propiedades DisplayMember y ValueMember si es necesario
-            //cmbBoxPacientes.DisplayMember = "Nombre"; // Propiedad a mostrar
+            //cmBoxDia.DataSource = Admin.UsuarioGuardado.Doctor.ListaPacientes;
+            cmBoxDia.DataSource = Session.UsuarioActual.Doctor.ListaPacientes;
+            cmBoxDia.DisplayMember = "DiaTurno";
+
+
+
+            cmbBoxPacientes.Enabled = false;
+            //cmbBoxPacientes.DataSource = Admin.UsuarioGuardado.Doctor.ListaPacientes;
+            //cmbBoxPacientes.DisplayMember = "NombreCompleto";
+
+
+
 
         }
 
@@ -44,19 +51,44 @@ namespace WinFormsApp
             // Limpiar el ListBox antes de mostrar los datos
             lstBoxDatos.Items.Clear();
 
-            //foreach (Paciente paciente in doctor.ListaPacientes)
-            //{
-            //    if(cmbBoxPacientes.Text == paciente.Nombre)
-            //    {
+            foreach (Paciente paciente in Session.UsuarioActual.Doctor.ListaPacientes)
+            {
+                if (cmbBoxPacientes.Text == paciente.NombreCompleto)
+                {
 
-            //        lstBoxDatos.Items.Add("Nombre: " + paciente.Nombre);
-            //        lstBoxDatos.Items.Add("Apellido: " + paciente.Apellido);
-            //        lstBoxDatos.Items.Add("DNI: " + paciente.DNI);
-            //        lstBoxDatos.Items.Add("Genero: " + paciente.Genero);
-            //        lstBoxDatos.Items.Add("Enfermedad: " + paciente.Enfermedad);
+                    lstBoxDatos.Items.Add("Nombre: " + paciente.Nombre);
+                    lstBoxDatos.Items.Add("Apellido: " + paciente.Apellido);
+                    lstBoxDatos.Items.Add("Genero: " + paciente.Genero);
+                    lstBoxDatos.Items.Add("");
+                    lstBoxDatos.Items.Add("-----------[TURNO]-----------");
+                    lstBoxDatos.Items.Add("Dia: " + paciente.Turno.Dia.ToString("dd/MM/yyyy"));
+                    lstBoxDatos.Items.Add("Hora: " + paciente.Turno.Horario);
 
-            //    }
-            //}
+                }
+            }
         }
+
+        private void cmBoxDia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbBoxPacientes.Enabled = true;
+
+            List<Paciente> listaPacienteFiltrado = new List<Paciente>();
+
+            foreach (Paciente paciente in Session.UsuarioActual.Doctor.ListaPacientes)
+            {
+                if (paciente.Turno.Dia.ToString("dd/MM/yyyy") == cmBoxDia.Text)
+                {
+                    listaPacienteFiltrado.Add(paciente);
+                }
+            }
+
+
+            cmbBoxPacientes.DataSource = listaPacienteFiltrado;
+            cmbBoxPacientes.DisplayMember = "NombreCompleto";
+            cmbBoxPacientes.Text = "";
+
+        }
+
+        
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Biblioteca;
 using Biblioteca.clases;
+using Biblioteca.DAO;
 using Biblioteca.excepciones;
 using System;
 using System.Collections.Generic;
@@ -43,54 +44,62 @@ namespace WinFormsApp
 
 
             try
-            {  
-                Admin.ListaUsuarios = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
+            {
 
-
+                UsuarioDAO usuarioDao = new UsuarioDAO();
                 Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
-                Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now, txtBoxMail.Text);
+                Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, txtBoxMail.Text);
 
-                Admin.ListaUsuarios.Add(usuarioNuevo);
-                ManejadorJson.Serializacion(Admin.ListaUsuarios, Admin.RutaCompleta);
+                if (usuarioDao.GuardarPaciente(usuarioNuevo))
+                {
+                    lblConfirmacionCreacionUsuario.ForeColor = Color.Green;
+                    lblConfirmacionCreacionUsuario.Text = "Usuario creado correctamente";
+
+
+
+                    // Reseteo de textos
+                    groupBoxNombre.Text = string.Empty;
+                    groupBoxApellido.Text = string.Empty;
+                    groupBoxDNI.Text = string.Empty;
+                    groupBoxGenero.Text = string.Empty;
+
+                    txtBoxUsuario.Text = string.Empty;
+                    txtBoxContraseña.Text = string.Empty;
+                    txtBoxMail.Text = string.Empty;
+                }
+                else
+                {
+                    lblConfirmacionCreacionUsuario.ForeColor = Color.Red;
+                    lblConfirmacionCreacionUsuario.Text = "No se pudo crear el usuario correctamente";
+                }
+
+
 
             }
             catch (Exception ex)
             {
                 validaciones = false;
-                //MessageBox.Show("Argumento invalido");
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
 
             // Mostrar resultado de validación
-            if (validaciones)
-            {
-
-                lblConfirmacionCreacionUsuario.ForeColor = Color.Green;
-                lblConfirmacionCreacionUsuario.Text = "Usuario creado correctamente";
+            //if (validaciones)
+            //{
 
 
+            //}
+            //else
+            //{
 
-                // Reseteo de textos
-                groupBoxNombre.Text = string.Empty;
-                groupBoxApellido.Text = string.Empty;
-                groupBoxDNI.Text = string.Empty;
-                groupBoxGenero.Text = string.Empty;
-
-                txtBoxUsuario.Text = string.Empty;
-                txtBoxContraseña.Text = string.Empty;
-                txtBoxMail.Text = string.Empty;
-            }
-            else
-            {
-                lblConfirmacionCreacionUsuario.ForeColor = Color.Red;
-                lblConfirmacionCreacionUsuario.Text = "No se pudo crear el usuario correctamente";
-            }
+            //}
 
 
 
 
         }
+
+        
     }
 }

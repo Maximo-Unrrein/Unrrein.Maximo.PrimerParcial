@@ -128,6 +128,7 @@
             Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
+            
             ResumeLayout(false);
             PerformLayout();
         }

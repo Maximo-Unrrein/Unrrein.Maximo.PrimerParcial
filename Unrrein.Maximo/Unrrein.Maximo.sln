@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsApp", "WinFormsApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{710E232A-E9B5-49FA-A9CC-74134336D097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTesteo", "ConsoleTesteo\ConsoleTesteo.csproj", "{78834197-5F81-4192-87D6-B8778DABE2CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTesteo", "ConsoleTesteo\ConsoleTesteo.csproj", "{78834197-5F81-4192-87D6-B8778DABE2CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MisTestUnitarios", "MisTestUnitarios\MisTestUnitarios.csproj", "{991BD9A7-00A6-48F6-80EF-3C1DD3515FD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{78834197-5F81-4192-87D6-B8778DABE2CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78834197-5F81-4192-87D6-B8778DABE2CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78834197-5F81-4192-87D6-B8778DABE2CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{991BD9A7-00A6-48F6-80EF-3C1DD3515FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{991BD9A7-00A6-48F6-80EF-3C1DD3515FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{991BD9A7-00A6-48F6-80EF-3C1DD3515FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{991BD9A7-00A6-48F6-80EF-3C1DD3515FD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

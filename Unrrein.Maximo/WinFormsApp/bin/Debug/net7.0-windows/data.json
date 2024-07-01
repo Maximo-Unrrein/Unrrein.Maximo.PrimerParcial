@@ -1,7 +1,12 @@
 [
   {
     "Paciente": {
-      "Turno": null,
+      "Turno": {
+        "Dia": "2024-06-20T00:00:00",
+        "Horario": "6:00"
+      },
+      "NombreCompleto": "Luis Juez",
+      "DiaTurno": "20/06/2024",
       "Nombre": "Luis",
       "Apellido": "Juez",
       "DNI": 29121234,
@@ -10,12 +15,17 @@
     "Doctor": null,
     "NombreUsuario": "Luisito",
     "Contrase\u00F1aUsuario": "Luisito",
-    "HorarioIngreso": "2024-06-18T16:59:18.7633095-03:00",
+    "HorarioIngreso": "2024-06-19T21:31:07.1462658-03:00",
     "Mail": "Luisito@gmail.com"
   },
   {
     "Paciente": {
-      "Turno": null,
+      "Turno": {
+        "Dia": "2024-06-27T00:00:00",
+        "Horario": "10:00"
+      },
+      "NombreCompleto": "Max Unrrein",
+      "DiaTurno": "27/06/2024",
       "Nombre": "Max",
       "Apellido": "Unrrein",
       "DNI": 45226034,
@@ -24,13 +34,50 @@
     "Doctor": null,
     "NombreUsuario": "Max",
     "Contrase\u00F1aUsuario": "Max",
-    "HorarioIngreso": "2024-06-18T16:59:18.7673116-03:00",
+    "HorarioIngreso": "2024-06-19T21:31:07.1500292-03:00",
     "Mail": "MaxUnrrein@gmail.com"
   },
   {
     "Paciente": null,
     "Doctor": {
-      "ListaPacientes": [],
+      "ListaPacientes": [
+        {
+          "Turno": {
+            "Dia": "2024-06-20T00:00:00",
+            "Horario": "6:00"
+          },
+          "NombreCompleto": "Luis Juez",
+          "DiaTurno": "20/06/2024",
+          "Nombre": "Luis",
+          "Apellido": "Juez",
+          "DNI": 29121234,
+          "Genero": "F"
+        },
+        {
+          "Turno": {
+            "Dia": "2024-06-20T00:00:00-03:00",
+            "Horario": "7:00"
+          },
+          "NombreCompleto": "Vinito Tino",
+          "DiaTurno": "20/06/2024",
+          "Nombre": "Vinito",
+          "Apellido": "Tino",
+          "DNI": 11222333,
+          "Genero": "M"
+        },
+        {
+          "Turno": {
+            "Dia": "2024-06-27T00:00:00",
+            "Horario": "10:00"
+          },
+          "NombreCompleto": "Max Unrrein",
+          "DiaTurno": "27/06/2024",
+          "Nombre": "Max",
+          "Apellido": "Unrrein",
+          "DNI": 45226034,
+          "Genero": "M"
+        }
+      ],
       "HorariosAtencion": 0,
       "Especialidad": 1,
       "HorariosDisponibles": [
@@ -50,7 +97,7 @@
     },
     "NombreUsuario": "Pinochet",
     "Contrase\u00F1aUsuario": "Pinochet",
-    "HorarioIngreso": "2024-06-18T16:59:18.7679411-03:00",
+    "HorarioIngreso": "2024-06-19T21:31:07.1506599-03:00",
     "Mail": "Pinochet@hotmail.com"
   },
   {
@@ -76,7 +123,26 @@
     },
     "NombreUsuario": "River",
     "Contrase\u00F1aUsuario": "River",
-    "HorarioIngreso": "2024-06-18T16:59:18.7680583-03:00",
+    "HorarioIngreso": "2024-06-19T21:31:07.150791-03:00",
     "Mail": "River@gmail.com"
+  },
+  {
+    "Paciente": {
+      "Turno": {
+        "Dia": "2024-06-20T00:00:00-03:00",
+        "Horario": "7:00"
+      },
+      "NombreCompleto": "Vinito Tino",
+      "DiaTurno": "20/06/2024",
+      "Nombre": "Vinito",
+      "Apellido": "Tino",
+      "DNI": 11222333,
+      "Genero": "M"
+    },
+    "Doctor": null,
+    "NombreUsuario": "Vino",
+    "Contrase\u00F1aUsuario": "Vinito",
+    "HorarioIngreso": "2024-06-19T21:32:21.4557463-03:00",
+    "Mail": "Vino@gmail.com"
   }
 ]

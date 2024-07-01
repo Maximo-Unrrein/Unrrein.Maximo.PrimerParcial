@@ -262,6 +262,7 @@
             Name = "FrmCreation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Creation";
+            
             grpBoxDatosPersona.ResumeLayout(false);
             grpBoxDatosPersona.PerformLayout();
             ResumeLayout(false);

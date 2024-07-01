@@ -34,13 +34,16 @@
             btnMostrarDatosPaciente = new Button();
             cmbBoxPacientes = new ComboBox();
             lstBoxDatos = new ListBox();
+            label3 = new Label();
+            cmBoxDia = new ComboBox();
+            lblHora = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(201, 115);
+            label1.Location = new Point(197, 155);
             label1.Name = "label1";
             label1.Size = new Size(71, 15);
             label1.TabIndex = 0;
@@ -81,7 +84,7 @@
             // 
             cmbBoxPacientes.AllowDrop = true;
             cmbBoxPacientes.FormattingEnabled = true;
-            cmbBoxPacientes.Location = new Point(152, 133);
+            cmbBoxPacientes.Location = new Point(148, 173);
             cmbBoxPacientes.Name = "cmbBoxPacientes";
             cmbBoxPacientes.Size = new Size(173, 23);
             cmbBoxPacientes.TabIndex = 4;
@@ -95,12 +98,43 @@
             lstBoxDatos.Size = new Size(352, 319);
             lstBoxDatos.TabIndex = 5;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(219, 88);
+            label3.Name = "label3";
+            label3.Size = new Size(31, 15);
+            label3.TabIndex = 6;
+            label3.Text = "Dia";
+            // 
+            // cmBoxDia
+            // 
+            cmBoxDia.FormattingEnabled = true;
+            cmBoxDia.Location = new Point(148, 106);
+            cmBoxDia.Name = "cmBoxDia";
+            cmBoxDia.Size = new Size(177, 23);
+            cmBoxDia.TabIndex = 7;
+            cmBoxDia.SelectedIndexChanged += cmBoxDia_SelectedIndexChanged;
+            // 
+            // lblHora
+            // 
+            lblHora.AutoSize = true;
+            lblHora.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHora.Location = new Point(115, 37);
+            lblHora.Name = "lblHora";
+            lblHora.Size = new Size(0, 15);
+            lblHora.TabIndex = 8;
+            // 
             // FrmDoctor
             // 
             AutoScaleDimensions = new SizeF(9F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(834, 461);
+            Controls.Add(lblHora);
+            Controls.Add(cmBoxDia);
+            Controls.Add(label3);
             Controls.Add(lstBoxDatos);
             Controls.Add(cmbBoxPacientes);
             Controls.Add(btnMostrarDatosPaciente);
@@ -115,6 +149,7 @@
             Name = "FrmDoctor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmDoctor";
+            
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +162,8 @@
         private Button btnMostrarDatosPaciente;
         private ComboBox cmbBoxPacientes;
         private ListBox lstBoxDatos;
+        private Label label3;
+        private ComboBox cmBoxDia;
+        private Label lblHora;
     }
 }

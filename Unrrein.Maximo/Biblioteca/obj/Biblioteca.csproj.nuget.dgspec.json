@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "W:\\PROGRAMACION\\CSharp\\2024\\1° Parcial Lab II - 322°A - 1°Cuat. 2024\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj": {}
+    "W:\\PROGRAMACION\\CSharp\\2024\\Parcial Lab COPIA de la copia\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj": {}
   },
   "projects": {
-    "W:\\PROGRAMACION\\CSharp\\2024\\1° Parcial Lab II - 322°A - 1°Cuat. 2024\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj": {
+    "W:\\PROGRAMACION\\CSharp\\2024\\Parcial Lab COPIA de la copia\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "W:\\PROGRAMACION\\CSharp\\2024\\1° Parcial Lab II - 322°A - 1°Cuat. 2024\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj",
+        "projectUniqueName": "W:\\PROGRAMACION\\CSharp\\2024\\Parcial Lab COPIA de la copia\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj",
         "projectName": "Biblioteca",
-        "projectPath": "W:\\PROGRAMACION\\CSharp\\2024\\1° Parcial Lab II - 322°A - 1°Cuat. 2024\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj",
+        "projectPath": "W:\\PROGRAMACION\\CSharp\\2024\\Parcial Lab COPIA de la copia\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\Biblioteca.csproj",
         "packagesPath": "C:\\Users\\polak\\.nuget\\packages\\",
-        "outputPath": "W:\\PROGRAMACION\\CSharp\\2024\\1° Parcial Lab II - 322°A - 1°Cuat. 2024\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\obj\\",
+        "outputPath": "W:\\PROGRAMACION\\CSharp\\2024\\Parcial Lab COPIA de la copia\\Unrrein.Maximo.PrimerParcial\\Unrrein.Maximo\\Biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\polak\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

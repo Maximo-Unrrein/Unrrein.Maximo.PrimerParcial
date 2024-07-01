@@ -42,6 +42,7 @@
             lblDatosDelTurno = new Label();
             lblDatosTurno = new Label();
             btnCancelar = new Button();
+            lblHoraActual = new Label();
             SuspendLayout();
             // 
             // btnBack
@@ -176,12 +177,22 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // lblHoraActual
+            // 
+            lblHoraActual.AutoSize = true;
+            lblHoraActual.Font = new Font("SimSun", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHoraActual.Location = new Point(376, 50);
+            lblHoraActual.Name = "lblHoraActual";
+            lblHoraActual.Size = new Size(0, 15);
+            lblHoraActual.TabIndex = 15;
+            // 
             // FrmPaciente
             // 
             AutoScaleDimensions = new SizeF(9F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Info;
             ClientSize = new Size(761, 461);
+            Controls.Add(lblHoraActual);
             Controls.Add(btnCancelar);
             Controls.Add(lblDatosTurno);
             Controls.Add(lblDatosDelTurno);
@@ -204,6 +215,7 @@
             Name = "FrmPaciente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPaciente";
+            
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,5 +237,6 @@
         private Label lblDatosDelTurno;
         private Label lblDatosTurno;
         private Button btnCancelar;
+        private Label lblHoraActual;
     }
 }

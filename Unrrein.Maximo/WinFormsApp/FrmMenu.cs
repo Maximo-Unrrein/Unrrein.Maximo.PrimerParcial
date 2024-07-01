@@ -8,10 +8,6 @@ namespace WinFormsApp
         public FrmMenu()
         {
             InitializeComponent();
-
-
-            Admin.RutaCompleta = Admin.RutaArchivoJSON();
-
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -27,5 +23,8 @@ namespace WinFormsApp
             FrmCreation frmCreation = new FrmCreation();
             frmCreation.ShowDialog();
         }
+
+        
     }
+
 }

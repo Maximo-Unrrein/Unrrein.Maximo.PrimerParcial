@@ -16,7 +16,7 @@ namespace Biblioteca
         private Especialidades especialidad;
         private List<string> horariosDisponibles;
 
-        public Doctor() : base("A", "s", 12345678, 'G') { }
+        public Doctor() : base() { }
 
         //Constructor
         public Doctor(string nombre, string apellido, int dni, char genero, RangoHorario horarioAtencion, Especialidades especialidad) : base(nombre, apellido, dni, genero)
@@ -84,7 +84,7 @@ namespace Biblioteca
             switch (horario)
             {
                 case RangoHorario.Mañana:
-                    result.AddRange(new List<string> { "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00" });
+                    result.AddRange(new List<string> { "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00" });
                     break;
                 case RangoHorario.Tarde:
                     result.AddRange(new List<string> { "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00" });
@@ -97,13 +97,6 @@ namespace Biblioteca
         }
 
         
-
-
-
-
-
-
-
         public static bool operator ==(Doctor doctor, Paciente paciente)
         {
             foreach(Persona persona in doctor.ListaPacientes)
@@ -135,9 +128,9 @@ namespace Biblioteca
             if (doctor == paciente)
             {
                 doctor.listaPacientes.Remove(paciente);
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
     }
 }

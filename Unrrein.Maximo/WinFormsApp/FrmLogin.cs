@@ -1,5 +1,6 @@
 ﻿using Biblioteca;
 using Biblioteca.clases;
+using Biblioteca.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,14 +29,22 @@ namespace WinFormsApp
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            UsuarioDAO usuarioDao = new UsuarioDAO();
+            List<Usuario> listaUsuarioRetornada = usuarioDao.ListarUsuarios();
 
-            List<Usuario> listaUsuariosRetornada = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
 
-            foreach (Usuario usuario in listaUsuariosRetornada)
+
+
+
+            //JSON
+            //List<Usuario> listaUsuariosRetornada = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
+
+            foreach (Usuario usuario in listaUsuarioRetornada)
             {
                 if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Paciente is not null)
                 {
-                    Admin.UsuarioGuardado = usuario;
+                    //Admin.UsuarioGuardado = usuario;
+                    Session.UsuarioActual = usuario;
 
                     this.Hide();
                     FrmPaciente frmPaciente = new FrmPaciente();
@@ -44,46 +53,24 @@ namespace WinFormsApp
                 }
                 else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Doctor is not null)
                 {
-                    Admin.UsuarioGuardado = usuario;
+                    //Admin.UsuarioGuardado = usuario;
+                    Session.UsuarioActual = usuario;
 
                     this.Hide();
                     FrmDoctor frmDoctor = new FrmDoctor();
                     frmDoctor.ShowDialog();
+                }
+                else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Doctor is null && usuario.Paciente is null)
+                {
+                    this.Hide();
+                    FrmAdmin frmAdmin = new FrmAdmin();
+                    frmAdmin.ShowDialog();
                 }
                 else
                 {
                     lblConfirmacion.Text = "No existe usuario con Nombre/Contraseña similares";
                 }
             }
-
-            //foreach (Usuario usuario in Admin.ListaUsuarios)
-            //{
-            //    if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Paciente)
-            //    {
-            //        Admin.UsuarioGuardado = usuario;
-
-            //        this.Hide();
-            //        FrmPaciente frmPaciente = new FrmPaciente();
-            //        frmPaciente.ShowDialog();
-            //    }
-            //    else if (txtBoxUsuario.Text == usuario.NombreUsuario && txtBoxContraseña.Text == usuario.ContraseñaUsuario && usuario.Persona is Doctor)
-            //    {
-            //        Admin.UsuarioGuardado = usuario;
-
-
-            //        this.Hide();
-            //        FrmDoctor frmDoctor = new FrmDoctor();
-            //        frmDoctor.ShowDialog();
-            //    }
-            //    else
-            //    {
-            //        lblConfirmacion.Text = "No existe usuario con Nombre/Contraseña similares";
-            //    }
-            //}
-
-
-
-
 
         }
 
@@ -92,5 +79,7 @@ namespace WinFormsApp
             FrmRecuperacionContraseña frmRecuperacionContraseña = new FrmRecuperacionContraseña();
             frmRecuperacionContraseña.ShowDialog();
         }
+
+        
     }
 }

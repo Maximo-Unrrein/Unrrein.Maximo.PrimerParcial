@@ -28,21 +28,27 @@ namespace Biblioteca.clases
         {
 
         }
-        public Usuario(Paciente persona, string nombreUsuario, string contraseñaUsuario, DateTime horarioIngreso, string mail)
+        public Usuario(string nombreUsuario, string contraseñaUsuario, string mail)
+        {
+            this.NombreUsuario = nombreUsuario;
+            this.ContraseñaUsuario = contraseñaUsuario;
+            this.Mail = mail;
+        }
+        public Usuario(Paciente persona, string nombreUsuario, string contraseñaUsuario, string mail)
         {
             this.Paciente = persona;
             this.NombreUsuario = nombreUsuario;
             this.ContraseñaUsuario = contraseñaUsuario;
-            this.HorarioIngreso = horarioIngreso;
+            //this.HorarioIngreso = horarioIngreso;
             this.Mail = mail;
         }
 
-        public Usuario(Doctor persona, string nombreUsuario, string contraseñaUsuario, DateTime horarioIngreso, string mail)
+        public Usuario(Doctor persona, string nombreUsuario, string contraseñaUsuario, string mail)
         {
             this.Doctor = persona;
             this.NombreUsuario = nombreUsuario;
             this.ContraseñaUsuario = contraseñaUsuario;
-            this.HorarioIngreso = horarioIngreso;
+            //this.HorarioIngreso = horarioIngreso;
             this.Mail = mail;
         }
 
@@ -86,11 +92,11 @@ namespace Biblioteca.clases
             StringBuilder sb = new StringBuilder();
             if (Paciente is not null)
             {
-                sb.AppendLine(Paciente.ToString());
+                sb.Append(Paciente.ToString());
             }
             if (Doctor is not null)
             {
-                sb.AppendLine(Doctor.ToString());
+                sb.Append(Doctor.ToString());
 
             }
 
