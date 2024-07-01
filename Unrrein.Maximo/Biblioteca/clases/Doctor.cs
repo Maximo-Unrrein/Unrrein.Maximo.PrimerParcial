@@ -16,7 +16,7 @@ namespace Biblioteca
         private Especialidades especialidad;
         private List<string> horariosDisponibles;
 
-        public Doctor() : base("A", "s", 12345678, 'G') { }
+        public Doctor() : base() { }
 
         //Constructor
         public Doctor(string nombre, string apellido, int dni, char genero, RangoHorario horarioAtencion, Especialidades especialidad) : base(nombre, apellido, dni, genero)
@@ -97,13 +97,6 @@ namespace Biblioteca
         }
 
         
-
-
-
-
-
-
-
         public static bool operator ==(Doctor doctor, Paciente paciente)
         {
             foreach(Persona persona in doctor.ListaPacientes)
@@ -135,9 +128,9 @@ namespace Biblioteca
             if (doctor == paciente)
             {
                 doctor.listaPacientes.Remove(paciente);
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
     }
 }

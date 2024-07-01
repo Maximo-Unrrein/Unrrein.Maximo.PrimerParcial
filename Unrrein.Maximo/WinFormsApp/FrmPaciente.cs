@@ -38,6 +38,7 @@ namespace WinFormsApp
                 cmbBoxEspecialidad.Enabled = false;
                 cmbBoxDoctor.Enabled = false;
                 cmbBoxHora.Enabled = false;
+                monthCalendar1.Enabled = false;
                 btnConfirmarTurno.Enabled = false;
 
                 btnCancelar.Enabled = true;
@@ -74,7 +75,7 @@ namespace WinFormsApp
                 btnCancelar.Enabled = false;
                 btnCancelar.Visible = false;
 
-
+                
                 lblDatosTurno.Text = "";
             }
 
@@ -108,16 +109,38 @@ namespace WinFormsApp
             }
 
             //actualizacion comboBOx de doctores y Horarios
-
             cmbBoxDoctor.DataSource = listaDoctoresFiltrados;
             cmbBoxDoctor.DisplayMember = "NombreCompleto";
 
             if (cmbBoxDoctor.SelectedIndex != -1)
             {
+
+
+
+                //Reseteo los horarios
+                Doctor doctorSeleccionado = (Doctor)cmbBoxDoctor.SelectedItem;
+                doctorSeleccionado.SeteoHorariosDisponibles(doctorSeleccionado.HorariosAtencion);
+
+                //Eliminamos los horarios de los pacientes
+                foreach (Paciente paciente in doctorSeleccionado.ListaPacientes)
+                {
+                    if (paciente.Turno.Dia == monthCalendar1.SelectionRange.Start)
+                    {
+                        doctorSeleccionado.HorariosDisponibles.Remove(paciente.Turno.Horario);
+                    }
+                }
+
                 cmbBoxDoctor.Enabled = true;
                 cmbBoxHora.Enabled = true;
+                monthCalendar1.Enabled = true;
 
-                //cmbBoxHora.DataSource = (listaDoctoresFiltrados[cmbBoxDoctor.SelectedIndex]).HorariosDisponibles;
+                cmbBoxHora.DataSource = doctorSeleccionado.HorariosDisponibles;
+                
+                //actualizacion Hora doctor
+                //cmbBoxHora.DataSource = doctorSeleccionado.HorariosDisponibles;
+
+
+
             }
             else
             {
@@ -126,7 +149,11 @@ namespace WinFormsApp
 
                 cmbBoxDoctor.Enabled = false;
                 cmbBoxHora.Enabled = false;
+                monthCalendar1.Enabled = false;
             }
+
+
+
 
         }
         #endregion
@@ -135,8 +162,33 @@ namespace WinFormsApp
         private void cmbBoxDoctor_SelectedIndexChanged(object sender, EventArgs e)
         {
             Doctor doctorSeleccionado = (Doctor)cmbBoxDoctor.SelectedItem;
+            //cmbBoxHora.DataSource = doctorSeleccionado.HorariosDisponibles;
 
-            cmbBoxHora.DataSource = doctorSeleccionado.HorariosDisponibles;
+
+
+            List<Usuario> listaUsuariosRetornada = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
+
+
+            foreach (Usuario usuario in listaUsuariosRetornada)
+            {
+                if (usuario.Doctor is not null && usuario.Doctor.NombreCompleto == cmbBoxDoctor.Text)
+                {
+
+                    //Reseteo los horarios
+                    usuario.Doctor.SeteoHorariosDisponibles(usuario.Doctor.HorariosAtencion);
+
+                    //Eliminamos los horarios de los pacientes
+                    foreach (Paciente paciente in usuario.Doctor.ListaPacientes)
+                    {
+                        if (paciente.Turno.Dia == monthCalendar1.SelectionRange.Start)
+                        {
+                            usuario.Doctor.HorariosDisponibles.Remove(paciente.Turno.Horario);
+                        }
+                    }
+
+                    cmbBoxHora.DataSource = usuario.Doctor.HorariosDisponibles;
+                }
+            }
         }
 
         #region btnConfirmarTurno_Click
@@ -187,7 +239,7 @@ namespace WinFormsApp
                         //Buscamos doctor seleccionado 
                         if (usuario.Doctor is not null && cmbBoxDoctor.Text == usuario.Doctor.NombreCompleto)
                         {
-                            usuario.Doctor.HorariosDisponibles.Remove(cmbBoxHora.Text);
+                            //usuario.Doctor.HorariosDisponibles.Remove(cmbBoxHora.Text);
 
                             //Agregar el paciente con turno en la lista del Doctor
                             usuario.Doctor.ListaPacientes.Add(usuarioAux.Paciente);
@@ -295,15 +347,16 @@ namespace WinFormsApp
 
             List<Usuario> listaUsuariosRetornada = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
 
-            //bool flagVueltaReseteoHorarios = true;
-
+            
             foreach(Usuario usuario in listaUsuariosRetornada)
             {
                 if(usuario.Doctor is not null && usuario.Doctor.NombreCompleto == cmbBoxDoctor.Text)
                 {
+
+                    //Reseteo los horarios
                     usuario.Doctor.SeteoHorariosDisponibles(usuario.Doctor.HorariosAtencion);
 
-
+                    //Eliminamos los horarios de los pacientes
                     foreach(Paciente paciente in usuario.Doctor.ListaPacientes)
                     {
                         if(paciente.Turno.Dia == monthCalendar1.SelectionRange.Start)
@@ -311,6 +364,8 @@ namespace WinFormsApp
                             usuario.Doctor.HorariosDisponibles.Remove(paciente.Turno.Horario);
                         }
                     }
+
+                    cmbBoxHora.DataSource = usuario.Doctor.HorariosDisponibles;
                 }
             }
         }

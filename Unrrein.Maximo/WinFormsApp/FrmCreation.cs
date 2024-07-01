@@ -44,14 +44,14 @@ namespace WinFormsApp
 
             try
             {  
-                Admin.ListaUsuarios = ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
+                List<Usuario> listaUsuarios= ManejadorJson.Desealizacion(Admin.RutaCompleta, typeof(List<Usuario>)) as List<Usuario>;
 
 
                 Paciente paciente = new Paciente(groupBoxNombre.Text, groupBoxApellido.Text, int.Parse(groupBoxDNI.Text), char.Parse(groupBoxGenero.Text));
                 Usuario usuarioNuevo = new Usuario(paciente, txtBoxUsuario.Text, txtBoxContraseña.Text, DateTime.Now, txtBoxMail.Text);
 
-                Admin.ListaUsuarios.Add(usuarioNuevo);
-                ManejadorJson.Serializacion(Admin.ListaUsuarios, Admin.RutaCompleta);
+                listaUsuarios.Add(usuarioNuevo);
+                ManejadorJson.Serializacion(listaUsuarios, Admin.RutaCompleta);
 
             }
             catch (Exception ex)

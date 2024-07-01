@@ -12,16 +12,16 @@ namespace Biblioteca
     public sealed class Paciente : Persona
     {
         #region Atributos
-        //Atributos
+        
         protected Turno turno;
         #endregion
 
 
         //Constructor
-        public Paciente() : base("A", "s", 12345678, 'G') { }
+        public Paciente() : base() { }
 
 
-        public Paciente(string nombre, string apellido, int dni, char genero, string enfermedad) : base(nombre, apellido, dni, genero)
+        public Paciente(string nombre, string apellido, int dni, char genero, string enfermedad) : this(nombre, apellido, dni, genero)
         {
             this.Turno = null;
             //this.Enfermedad = enfermedad;
@@ -35,9 +35,9 @@ namespace Biblioteca
 
         //Propiedades
         public Turno Turno { get => this.turno; set => this.turno = value; }
-        //public string Enfermedad { get => this.enfermedad; set => this.enfermedad = value; }
-        
-        
+        public string NombreCompleto { get => $"{this.Nombre} {this.Apellido}"; }
+        public string? DiaTurno { get => this.Turno != null ? $"{this.Turno.Dia.ToString("dd/MM/yyyy")}" : null; }
+
 
 
         //Metodos
@@ -51,7 +51,7 @@ namespace Biblioteca
                 sb.AppendLine($"Apellido: {base.Apellido}");
                 sb.AppendLine($"DNI: {base.DNI}");
                 sb.AppendLine($"Genero: {base.Genero}");
-                sb.AppendLine($"{this.Turno.Mostrar()}");
+                sb.AppendLine($"{this.Turno.ToString()}");
                 //sb.AppendLine($"Enfermedad:{this.Enfermedad}");
             }
             else
@@ -68,14 +68,10 @@ namespace Biblioteca
         }
         public override bool Equals(Persona p)
         {
-            // Si el objeto pasado es null, retorna false
-            if (p == null)
-            {
-                return false;
-            }
-
+            
             // Usa el método GetType() para comparar los tipos de las dos instancias
             return this.GetType() == p.GetType();
         }
+                
     }
 }

@@ -17,13 +17,7 @@ namespace Biblioteca.clases
         // Agregar constructor sin parámetros /ERROR PARA DESERIALIZAR
 
 
-        public Persona()
-        {
-            Nombre = "A";
-            Apellido = "A";
-            DNI = 00000000;
-            Genero = 'F';
-        }
+        public Persona() { }
         public Persona(string nombre, string apellido, int dni, char genero)
         {
             Nombre = nombre;
@@ -96,13 +90,20 @@ namespace Biblioteca.clases
 
         //Metodos
         public abstract string ToString();
-        public abstract bool Equals(Persona p);
+        public virtual bool Equals(Persona p)
+        {
+            if(this.GetHashCode() == p.GetHashCode())
+            {
+                return true;
+            } 
+            return false;
+        }
 
 
         // Dentro de los metodos -> sobrecarga de operadores
         public static bool operator ==(Persona p1, Persona p2)
         {
-            if (p1.DNI == p2.DNI && p1.GetHashCode() != p2.GetHashCode()) //NOSE SI VA EL GETHASHCODE o PONER OTRA PROPIEDADE
+            if (p1.DNI == p2.DNI && p1.Equals(p2) && p1.Nombre == p2.Nombre) //NOSE SI VA EL GETHASHCODE o PONER OTRA PROPIEDADE
             {
                 return true;
             }
